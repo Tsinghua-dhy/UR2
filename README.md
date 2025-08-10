@@ -1,7 +1,7 @@
 # UR²: Unified RAG and Reasoning through Reinforcement Learning
 
 <div align="center">
-<img src="../assets/main_figure.png" width="85%">
+<img src="./ur2.png" width="85%">
 </div>
 
 **Paper coming soon**  
