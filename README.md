@@ -1,7 +1,7 @@
 # UR²: Unified RAG and Reasoning through Reinforcement Learning
 
 <div align="center">
-<img src="assets/main_figure.png" alt="UR² Main Figure" width="85%">
+<img src="../assets/main_figure.png" width="85%">
 </div>
 
 **Paper coming soon**  
@@ -27,10 +27,6 @@ It scales across **mathematical reasoning, medical QA, and general-domain tasks*
 ---
 
 ## 🛠 Method Overview
-
-<div align="center">
-<img src="assets/method_pipeline.png" alt="UR² Pipeline" width="90%">
-</div>
 
 1. **LLM-Summarized Retrieval Corpus**  
    - Offline curated corpora + concise LLM summaries.  
