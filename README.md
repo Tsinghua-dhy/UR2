@@ -78,16 +78,17 @@ It scales across **mathematical reasoning, medical QA, and general-domain tasks*
 
 ## 📜 Citation
 
-@misc{li2025ur2unifyragreasoning,
-      title={UR^2: Unify RAG and Reasoning through Reinforcement Learning}, 
-      author={Weitao Li and Boran Xiang and Xiaolong Wang and Zhinan Gou and Weizhi Ma and Yang Liu},
-      year={2025},
-      eprint={2508.06165},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2508.06165}, 
+```bibtex
+@misc{li2025ur2,
+  title        = {{UR$^2$}: Unify RAG and Reasoning through Reinforcement Learning},
+  author       = {Weitao Li and Boran Xiang and Xiaolong Wang and Zhinan Gou and Weizhi Ma and Yang Liu},
+  year         = {2025},
+  eprint       = {2508.06165},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CL},
+  url          = {https://arxiv.org/abs/2508.06165},
 }
-
+```
 ---
 
 <div align="center">
