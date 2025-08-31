@@ -1075,7 +1075,7 @@ class RemoteExperienceMaker(NaiveExperienceMaker):
 
 
     def _generate_vllm_with_retrieve(self, all_prompts: List[str], **kwargs) -> List[Samples]:
-        url_wiki = "http://0.0.0.0:5004/queries"
+        url_wiki = "http://0.0.0.0:5006/queries"
         from vllm import SamplingParams
         rank = torch.distributed.get_rank()
         world_size = torch.distributed.get_world_size()
