@@ -1,0 +1,1 @@
+python mix_retrieve.py 5004 "4.1mini" "qwen3-14b" "0,7" 16384 "strong_format" true "xty"

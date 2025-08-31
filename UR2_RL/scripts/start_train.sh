@@ -1,0 +1,1 @@
+bash qwen_reinforce_plus_train.sh | tee results/logs/qwen_reinforce_plus_train.txt

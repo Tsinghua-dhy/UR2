@@ -1,0 +1,1 @@
+python zero_to_fp32.py /AIRPFS/lwt/R1-Searcher/scripts/trainning_results/results/ckpts/qwen-2.5-7b-instruct-rl-ours-mmlu-v0.2.1/_actor/global_step20 pytorch_model.steps20 --tag ""

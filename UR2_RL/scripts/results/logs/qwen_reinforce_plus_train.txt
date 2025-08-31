@@ -1,0 +1,1581 @@
+[37mJob submission server address[39m: [1mhttp://127.0.0.1:8267[22m
+
+[32m-------------------------------------------------------[39m
+[32mJob 'raysubmit_yNKe53qPxRLwqGmt' submitted successfully[39m
+[32m-------------------------------------------------------[39m
+
+[36mNext steps[39m
+  Query the logs of the job:
+    [1mray job logs raysubmit_yNKe53qPxRLwqGmt[22m
+  Query the status of the job:
+    [1mray job status raysubmit_yNKe53qPxRLwqGmt[22m
+  Request the job to be stopped:
+    [1mray job stop raysubmit_yNKe53qPxRLwqGmt[22m
+
+Tailing logs until the job exits (disable with --no-wait):
+[2025-07-31 09:01:48,043] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+2025-07-31 09:01:50,463	INFO worker.py:1429 -- Using address 192.168.0.14:8266 set in the environment variable RAY_ADDRESS
+2025-07-31 09:01:50,463	INFO worker.py:1564 -- Connecting to existing Ray cluster at address: 192.168.0.14:8266...
+2025-07-31 09:01:50,469	INFO worker.py:1740 -- Connected to Ray cluster. View the dashboard at [1m[32m127.0.0.1:8267 [39m[22m
+[36m(pid=1877505)[0m [2025-07-31 09:01:54,166] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(pid=1877661)[0m [2025-07-31 09:02:00,281] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(pid=1877660)[0m [2025-07-31 09:02:00,320] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:02,781] [INFO] [comm.py:652:init_distributed] cdb=None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:02,782] [INFO] [comm.py:683:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[36m(ActorModelRayActor pid=1877660)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
+[36m(ActorModelRayActor pid=1877660)[0m 
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+[36m(ActorModelRayActor pid=1877660)[0m 
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  5.30it/s]
+[36m(ActorModelRayActor pid=1877660)[0m 
+Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  5.23it/s]
+[36m(ActorModelRayActor pid=1877660)[0m 
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  5.15it/s]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  5.13it/s]
+[36m(ActorModelRayActor pid=1877505)[0m Actor(
+[36m(ActorModelRayActor pid=1877505)[0m   (model): LlamaForCausalLM(
+[36m(ActorModelRayActor pid=1877505)[0m     (model): LlamaModel(
+[36m(ActorModelRayActor pid=1877505)[0m       (embed_tokens): Embedding(128256, 4096)
+[36m(ActorModelRayActor pid=1877505)[0m       (layers): ModuleList(
+[36m(ActorModelRayActor pid=1877505)[0m         (0-31): 32 x LlamaDecoderLayer(
+[36m(ActorModelRayActor pid=1877505)[0m           (self_attn): LlamaFlashAttention2(
+[36m(ActorModelRayActor pid=1877505)[0m             (q_proj): Linear(in_features=4096, out_features=4096, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m             (k_proj): Linear(in_features=4096, out_features=1024, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m             (v_proj): Linear(in_features=4096, out_features=1024, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m             (o_proj): Linear(in_features=4096, out_features=4096, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m             (rotary_emb): LlamaRotaryEmbedding()
+[36m(ActorModelRayActor pid=1877505)[0m           )
+[36m(ActorModelRayActor pid=1877505)[0m           (mlp): LlamaMLP(
+[36m(ActorModelRayActor pid=1877505)[0m             (gate_proj): Linear(in_features=4096, out_features=14336, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m             (up_proj): Linear(in_features=4096, out_features=14336, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m             (down_proj): Linear(in_features=14336, out_features=4096, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m             (act_fn): SiLU()
+[36m(ActorModelRayActor pid=1877505)[0m           )
+[36m(ActorModelRayActor pid=1877505)[0m           (input_layernorm): LlamaRMSNorm((4096,), eps=1e-05)
+[36m(ActorModelRayActor pid=1877505)[0m           (post_attention_layernorm): LlamaRMSNorm((4096,), eps=1e-05)
+[36m(ActorModelRayActor pid=1877505)[0m         )
+[36m(ActorModelRayActor pid=1877505)[0m       )
+[36m(ActorModelRayActor pid=1877505)[0m       (norm): LlamaRMSNorm((4096,), eps=1e-05)
+[36m(ActorModelRayActor pid=1877505)[0m       (rotary_emb): LlamaRotaryEmbedding()
+[36m(ActorModelRayActor pid=1877505)[0m     )
+[36m(ActorModelRayActor pid=1877505)[0m     (lm_head): Linear(in_features=4096, out_features=128256, bias=False)
+[36m(ActorModelRayActor pid=1877505)[0m   )
+[36m(ActorModelRayActor pid=1877505)[0m )
+[36m(ActorModelRayActor pid=1877660)[0m Using /root/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...
+[36m(ActorModelRayActor pid=1877660)[0m Detected CUDA files, patching ldflags
+[36m(ActorModelRayActor pid=1877660)[0m Emitting ninja build file /root/.cache/torch_extensions/py310_cu124/fused_adam/build.ninja...
+[36m(ActorModelRayActor pid=1877660)[0m /AIRPFS/lwt/miniconda3/envs/r1-searcher/lib/python3.10/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. 
+[36m(ActorModelRayActor pid=1877660)[0m If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].
+[36m(ActorModelRayActor pid=1877660)[0m   warnings.warn(
+[36m(ActorModelRayActor pid=1877660)[0m Building extension module fused_adam...
+[36m(ActorModelRayActor pid=1877660)[0m Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[36m(ActorModelRayActor pid=1877660)[0m ninja: no work to do.
+[36m(ActorModelRayActor pid=1877660)[0m Time to load fused_adam op: 0.04500699043273926 seconds
+[36m(ActorModelRayActor pid=1877660)[0m Loading extension module fused_adam...
+[36m(ActorModelRayActor pid=1877505)[0m dataset: /AIRPFS/lwt/training_data/math/sampled_math_dataset_v8_stage1_new.jsonl
+[36m(ActorModelRayActor pid=1877505)[0m loaded /AIRPFS/lwt/training_data/math/sampled_math_dataset_v8_stage1_new.jsonl with data_files=/AIRPFS/lwt/training_data/math/sampled_math_dataset_v8_stage1_new.jsonl
+[36m(ActorModelRayActor pid=1877505)[0m [Dataset({
+[36m(ActorModelRayActor pid=1877505)[0m     features: ['question', 'answer', 'source', 'level', 'subject', 'idx'],
+[36m(ActorModelRayActor pid=1877505)[0m     num_rows: 1457
+[36m(ActorModelRayActor pid=1877505)[0m })]
+[36m(pid=1877659)[0m [2025-07-31 09:02:00,438] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)[32m [repeated 2x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(ActorModelRayActor pid=1877660)[0m self.prompts_dataset[0:2]: ["0<|idx_prompt_split|><|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\nYou are solving a math problem. Think step by step to solve it.\n\nThe reasoning process includes detailed considerations such as analyzing questions, summarizing relevant findings, brainstorming new ideas, verifying the accuracy of current steps, refining any errors, and revisiting previous steps.\n\nDuring your reasoning, if you're unsure about a factual concept — such as a definition, formula, theorem, or mathematical constant — you may issue a **search query** to clarify it.\n\nFormat your query using the following template (each query must target only one fact):\n\n<|begin_of_query|> your concise query (less than 20 words) <|end_of_query|>\n\n✅ Examples:\n<|begin_of_query|> Definition of Möbius function <|end_of_query|>  \n<|begin_of_query|> Formula for variance of Bernoulli distribution <|end_of_query|>\n\n❌ Do NOT query for reasoning-related content like:\n- Whether a solution approach is valid\n- How to compute a specific value\n- Multi-step deductions or conclusions\n\nYou may issue at most **four** search queries per problem — use them wisely.\n\nWhen documents are returned in this format:\n<|begin_of_documents|>  \n... (search results here)  \n<|end_of_documents|>\n\nUse the evidence to confirm or revise your reasoning. Then continue analyzing the question until you're confident in the answer.\n\nAt the end of your reasoning, give your final answer in the following format:  \n\\boxed{YOUR_ANSWER}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nQuestion: Find the equation of the asymptote of the graph of $r = \\cos 2 \\theta \\sec \\theta.$<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n<|source_prompt_split|>math<|retrieve_prompt_split|>True", "1<|idx_prompt_split|><|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\nYou are solving a math problem. Think step by step to solve it.\n\nThe reasoning process includes detailed considerations such as analyzing questions, summarizing relevant findings, brainstorming new ideas, verifying the accuracy of current steps, refining any errors, and revisiting previous steps.\n\nDuring your reasoning, if you're unsure about a factual concept — such as a definition, formula, theorem, or mathematical constant — you may issue a **search query** to clarify it.\n\nFormat your query using the following template (each query must target only one fact):\n\n<|begin_of_query|> your concise query (less than 20 words) <|end_of_query|>\n\n✅ Examples:\n<|begin_of_query|> Definition of Möbius function <|end_of_query|>  \n<|begin_of_query|> Formula for variance of Bernoulli distribution <|end_of_query|>\n\n❌ Do NOT query for reasoning-related content like:\n- Whether a solution approach is valid\n- How to compute a specific value\n- Multi-step deductions or conclusions\n\nYou may issue at most **four** search queries per problem — use them wisely.\n\nWhen documents are returned in this format:\n<|begin_of_documents|>  \n... (search results here)  \n<|end_of_documents|>\n\nUse the evidence to confirm or revise your reasoning. Then continue analyzing the question until you're confident in the answer.\n\nAt the end of your reasoning, give your final answer in the following format:  \n\\boxed{YOUR_ANSWER}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nQuestion: The sequences of positive integers $1,a_2, a_3, \\dots$ and $1,b_2, b_3, \\dots$ are an increasing arithmetic sequence and an increasing geometric sequence, respectively. Let $c_n=a_n+b_n$. There is an integer $k$ such that $c_{k-1}=100$ and $c_{k+1}=1000$. Find $c_k$.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n<|source_prompt_split|>math<|retrieve_prompt_split|>True"]
+[36m(ActorModelRayActor pid=1877660)[0m self.prompts_dataloader: <torch.utils.data.dataloader.DataLoader object at 0x7eeb2da2fc70>
+[36m(ActorModelRayActor pid=1877660)[0m [2025-07-31 09:02:05,743] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 4
+[36m(ActorModelRayActor pid=1877505)[0m 
+Preprocessing data:   0%|          | 0/1457 [00:00<?, ?it/s]
+[36m(ActorModelRayActor pid=1877505)[0m 
+Preprocessing data:  42%|████▏     | 608/1457 [00:00<00:00, 6073.65it/s]
+[36m(ActorModelRayActor pid=1877505)[0m 
+Preprocessing data:  95%|█████████▌| 1385/1457 [00:00<00:00, 7067.00it/s]
+Preprocessing data: 100%|██████████| 1457/1457 [00:00<00:00, 6955.02it/s]
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:06,072] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.15.0, git-hash=unknown, git-branch=unknown
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:06,072] [INFO] [comm.py:677:init_distributed] Distributed backend already initialized
+[36m(ReferenceModelRayActor pid=1878110)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.[32m [repeated 4x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m 
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s][32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m 
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  4.52it/s][32m [repeated 10x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m 
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  4.69it/s]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  4.56it/s][32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m Using /root/.cache/torch_extensions/py310_cu124 as PyTorch extensions root...[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m Detected CUDA files, patching ldflags[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m Emitting ninja build file /root/.cache/torch_extensions/py310_cu124/fused_adam/build.ninja...[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m /AIRPFS/lwt/miniconda3/envs/r1-searcher/lib/python3.10/site-packages/torch/utils/cpp_extension.py:1964: UserWarning: TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation. [32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'].[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m   warnings.warn([32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m Building extension module fused_adam...[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877658)[0m Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877659)[0m Loading extension module fused_adam...[32m [repeated 3x across cluster][0m
+[36m(ReferenceModelRayActor pid=1878110)[0m [2025-07-31 09:02:09,281] [INFO] [comm.py:652:init_distributed] cdb=None[32m [repeated 5x across cluster][0m
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:02,780] [INFO] [comm.py:683:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[36m(ActorModelRayActor pid=1877659)[0m ninja: no work to do.[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877659)[0m Time to load fused_adam op: 0.0414273738861084 seconds[32m [repeated 3x across cluster][0m
+[36m(ReferenceModelRayActor pid=1877661)[0m Actor(
+[36m(ReferenceModelRayActor pid=1877661)[0m   (model): LlamaForCausalLM(
+[36m(ReferenceModelRayActor pid=1877661)[0m     (model): LlamaModel(
+[36m(ReferenceModelRayActor pid=1877661)[0m       (embed_tokens): Embedding(128256, 4096)
+[36m(ReferenceModelRayActor pid=1877661)[0m       (layers): ModuleList(
+[36m(ReferenceModelRayActor pid=1877661)[0m         (0-31): 32 x LlamaDecoderLayer(
+[36m(ReferenceModelRayActor pid=1877661)[0m           (self_attn): LlamaFlashAttention2(
+[36m(ReferenceModelRayActor pid=1877661)[0m             (q_proj): Linear(in_features=4096, out_features=4096, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m             (k_proj): Linear(in_features=4096, out_features=1024, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m             (v_proj): Linear(in_features=4096, out_features=1024, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m             (o_proj): Linear(in_features=4096, out_features=4096, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m             (rotary_emb): LlamaRotaryEmbedding()
+[36m(ReferenceModelRayActor pid=1877661)[0m           )
+[36m(ReferenceModelRayActor pid=1877661)[0m           (mlp): LlamaMLP(
+[36m(ReferenceModelRayActor pid=1877661)[0m             (gate_proj): Linear(in_features=4096, out_features=14336, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m             (up_proj): Linear(in_features=4096, out_features=14336, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m             (down_proj): Linear(in_features=14336, out_features=4096, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m             (act_fn): SiLU()
+[36m(ReferenceModelRayActor pid=1877661)[0m           )
+[36m(ReferenceModelRayActor pid=1877661)[0m           (input_layernorm): LlamaRMSNorm((4096,), eps=1e-05)
+[36m(ReferenceModelRayActor pid=1877661)[0m           (post_attention_layernorm): LlamaRMSNorm((4096,), eps=1e-05)
+[36m(ReferenceModelRayActor pid=1877661)[0m         )
+[36m(ReferenceModelRayActor pid=1877661)[0m       )
+[36m(ReferenceModelRayActor pid=1877661)[0m       (norm): LlamaRMSNorm((4096,), eps=1e-05)
+[36m(ReferenceModelRayActor pid=1877661)[0m       (rotary_emb): LlamaRotaryEmbedding()
+[36m(ReferenceModelRayActor pid=1877661)[0m     )
+[36m(ReferenceModelRayActor pid=1877661)[0m     (lm_head): Linear(in_features=4096, out_features=128256, bias=False)
+[36m(ReferenceModelRayActor pid=1877661)[0m   )
+[36m(ReferenceModelRayActor pid=1877661)[0m )
+[36m(LLMRayActor pid=1878117)[0m Connecting to existing Ray cluster at address: 192.168.0.14:8266...
+[36m(LLMRayActor pid=1878117)[0m Calling ray.init() again after it has already been called.
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:13 config.py:478] This model supports multiple tasks: {'classify', 'embed', 'generate', 'score', 'reward'}. Defaulting to 'generate'.
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:13 llm_engine.py:249] Initializing an LLM engine (v0.6.5) with config: model='/AIRPFS/lwt/model/llama-3.1-8b-instruct', speculative_config=None, tokenizer='/AIRPFS/lwt/model/llama-3.1-8b-instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=31048, download_dir=None, load_format=auto, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=42, served_model_name=/AIRPFS/lwt/model/llama-3.1-8b-instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=False, chunked_prefill_enabled=False, use_async_output_proc=True, mm_cache_preprocessor=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"candidate_compile_sizes":[],"compile_sizes":[],"capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":256}, use_cached_outputs=False, 
+[36m(pid=1878114)[0m [2025-07-31 09:02:06,782] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)[32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877659)[0m self.prompts_dataset[0:2]: ["0<|idx_prompt_split|><|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\nYou are solving a math problem. Think step by step to solve it.\n\nThe reasoning process includes detailed considerations such as analyzing questions, summarizing relevant findings, brainstorming new ideas, verifying the accuracy of current steps, refining any errors, and revisiting previous steps.\n\nDuring your reasoning, if you're unsure about a factual concept — such as a definition, formula, theorem, or mathematical constant — you may issue a **search query** to clarify it.\n\nFormat your query using the following template (each query must target only one fact):\n\n<|begin_of_query|> your concise query (less than 20 words) <|end_of_query|>\n\n✅ Examples:\n<|begin_of_query|> Definition of Möbius function <|end_of_query|>  \n<|begin_of_query|> Formula for variance of Bernoulli distribution <|end_of_query|>\n\n❌ Do NOT query for reasoning-related content like:\n- Whether a solution approach is valid\n- How to compute a specific value\n- Multi-step deductions or conclusions\n\nYou may issue at most **four** search queries per problem — use them wisely.\n\nWhen documents are returned in this format:\n<|begin_of_documents|>  \n... (search results here)  \n<|end_of_documents|>\n\nUse the evidence to confirm or revise your reasoning. Then continue analyzing the question until you're confident in the answer.\n\nAt the end of your reasoning, give your final answer in the following format:  \n\\boxed{YOUR_ANSWER}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nQuestion: Find the equation of the asymptote of the graph of $r = \\cos 2 \\theta \\sec \\theta.$<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n<|source_prompt_split|>math<|retrieve_prompt_split|>True", "1<|idx_prompt_split|><|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nCutting Knowledge Date: December 2023\nToday Date: 26 Jul 2024\n\nYou are solving a math problem. Think step by step to solve it.\n\nThe reasoning process includes detailed considerations such as analyzing questions, summarizing relevant findings, brainstorming new ideas, verifying the accuracy of current steps, refining any errors, and revisiting previous steps.\n\nDuring your reasoning, if you're unsure about a factual concept — such as a definition, formula, theorem, or mathematical constant — you may issue a **search query** to clarify it.\n\nFormat your query using the following template (each query must target only one fact):\n\n<|begin_of_query|> your concise query (less than 20 words) <|end_of_query|>\n\n✅ Examples:\n<|begin_of_query|> Definition of Möbius function <|end_of_query|>  \n<|begin_of_query|> Formula for variance of Bernoulli distribution <|end_of_query|>\n\n❌ Do NOT query for reasoning-related content like:\n- Whether a solution approach is valid\n- How to compute a specific value\n- Multi-step deductions or conclusions\n\nYou may issue at most **four** search queries per problem — use them wisely.\n\nWhen documents are returned in this format:\n<|begin_of_documents|>  \n... (search results here)  \n<|end_of_documents|>\n\nUse the evidence to confirm or revise your reasoning. Then continue analyzing the question until you're confident in the answer.\n\nAt the end of your reasoning, give your final answer in the following format:  \n\\boxed{YOUR_ANSWER}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nQuestion: The sequences of positive integers $1,a_2, a_3, \\dots$ and $1,b_2, b_3, \\dots$ are an increasing arithmetic sequence and an increasing geometric sequence, respectively. Let $c_n=a_n+b_n$. There is an integer $k$ such that $c_{k-1}=100$ and $c_{k+1}=1000$. Find $c_k$.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n<|source_prompt_split|>math<|retrieve_prompt_split|>True"][32m [repeated 3x across cluster][0m
+[36m(ActorModelRayActor pid=1877659)[0m self.prompts_dataloader: <torch.utils.data.dataloader.DataLoader object at 0x7f90a432b280>[32m [repeated 3x across cluster][0m
+[36m(ReferenceModelRayActor pid=1878114)[0m [2025-07-31 09:02:10,580] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 4[32m [repeated 7x across cluster][0m
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:10,578] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.15.0, git-hash=unknown, git-branch=unknown
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:10,578] [INFO] [comm.py:677:init_distributed] Distributed backend already initialized
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:14 ray_gpu_executor.py:122] use_ray_spmd_worker: False
+[36m(ReferenceModelRayActor pid=1878114)[0m [2025-07-31 09:02:09,498] [INFO] [comm.py:652:init_distributed] cdb=None[32m [repeated 2x across cluster][0m
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,284] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,285] [INFO] [logging.py:96:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,285] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,299] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = FusedAdam
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,299] [INFO] [utils.py:59:is_zero_supported_optimizer] Checking ZeRO support for optimizer=FusedAdam type=<class 'deepspeed.ops.adam.fused_adam.FusedAdam'>
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,299] [INFO] [logging.py:96:log_dist] [Rank 0] Creating torch.bfloat16 ZeRO stage 2 optimizer
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,300] [INFO] [stage_1_and_2.py:148:__init__] Reduce bucket size 500000000
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,300] [INFO] [stage_1_and_2.py:149:__init__] Allgather bucket size 500000000
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,300] [INFO] [stage_1_and_2.py:150:__init__] CPU Offload: False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:16,300] [INFO] [stage_1_and_2.py:151:__init__] Round robin gradient partitioning: False
+[36m(LLMRayActor pid=1878117)[0m [2025-07-31 09:02:23,887] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(RayWorkerWrapper pid=1878816)[0m [2025-07-31 09:02:24,123] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,246] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,248] [INFO] [logging.py:96:log_dist] [Rank 0] Creating BF16 optimizer
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,509] [INFO] [utils.py:781:see_memory_usage] begin bf16_optimizer
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,510] [INFO] [utils.py:782:see_memory_usage] MA 14.96 GB         Max_MA 14.96 GB         CA 15.08 GB         Max_CA 15 GB 
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,510] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 298.5 GB, percent = 15.9%
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,766] [INFO] [utils.py:781:see_memory_usage] end bf16_ optimizer
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,767] [INFO] [utils.py:782:see_memory_usage] MA 14.96 GB         Max_MA 14.96 GB         CA 15.08 GB         Max_CA 15 GB 
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,767] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 300.43 GB, percent = 16.0%
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,769] [INFO] [config.py:999:print] DeepSpeedEngine configuration:
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,769] [INFO] [config.py:1003:print]   activation_checkpointing_config  {
+[36m(ReferenceModelRayActor pid=1877661)[0m     "partition_activations": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "contiguous_memory_optimization": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "cpu_checkpointing": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "number_checkpoints": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "synchronize_checkpoint_boundary": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "profile": false
+[36m(ReferenceModelRayActor pid=1877661)[0m }
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   amp_enabled .................. False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   amp_params ................... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   autotuning_config ............ {
+[36m(ReferenceModelRayActor pid=1877661)[0m     "enabled": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "start_step": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "end_step": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "metric_path": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "arg_mappings": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "metric": "throughput", 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "model_info": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "results_dir": "autotuning_results", 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "exps_dir": "autotuning_exps", 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "overwrite": true, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "fast": true, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "start_profile_step": 3, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "end_profile_step": 5, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "tuner_type": "gridsearch", 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "tuner_early_stopping": 5, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "tuner_num_trials": 50, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "model_info_path": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "mp_size": 1, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "max_train_batch_size": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "min_train_batch_size": 1, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "min_train_micro_batch_size_per_gpu": 1, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "num_tuning_micro_batch_sizes": 3
+[36m(ReferenceModelRayActor pid=1877661)[0m }
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   bfloat16_enabled ............. True
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   bfloat16_immediate_grad_update  False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   checkpoint_parallel_write_pipeline  False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   checkpoint_tag_validation_enabled  True
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   checkpoint_tag_validation_fail  False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7f30f057e260>
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   communication_data_type ...... None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   curriculum_enabled_legacy .... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   curriculum_params_legacy ..... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,770] [INFO] [config.py:1003:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   data_efficiency_enabled ...... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   dataloader_drop_last ......... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   disable_allgather ............ False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   dump_state ................... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   dynamic_loss_scale_args ...... None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_enabled ........... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_gas_boundary_resolution  1
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_layer_num ......... 0
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_max_iter .......... 100
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_stability ......... 1e-06
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_tol ............... 0.01
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   eigenvalue_verbose ........... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   elasticity_enabled ........... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   flops_profiler_config ........ {
+[36m(ReferenceModelRayActor pid=1877661)[0m     "enabled": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "recompute_fwd_factor": 0.0, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "profile_step": 1, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "module_depth": -1, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "top_modules": 1, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "detailed": true, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "output_file": null
+[36m(ReferenceModelRayActor pid=1877661)[0m }
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   fp16_auto_cast ............... None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   fp16_enabled ................. False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   fp16_master_weights_and_gradients  False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   global_rank .................. 0
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   grad_accum_dtype ............. None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   gradient_accumulation_steps .. 64
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   gradient_clipping ............ 1.0
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   gradient_predivide_factor .... 1.0
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   graph_harvesting ............. False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   initial_dynamic_scale ........ 1
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   load_universal_checkpoint .... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   loss_scale ................... 1.0
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   memory_breakdown ............. False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   mics_hierarchial_params_gather  False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,771] [INFO] [config.py:1003:print]   mics_shard_size .............. -1
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   nebula_config ................ {
+[36m(ReferenceModelRayActor pid=1877661)[0m     "enabled": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "persistent_storage_path": null, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "persistent_time_interval": 100, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "num_of_version_in_retention": 2, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "enable_nebula_load": true, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "load_path": null
+[36m(ReferenceModelRayActor pid=1877661)[0m }
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   optimizer_legacy_fusion ...... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   optimizer_name ............... None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   optimizer_params ............. None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   pld_enabled .................. False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   pld_params ................... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   prescale_gradients ........... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   scheduler_name ............... None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   scheduler_params ............. None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   seq_parallel_communication_data_type  torch.float32
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   sparse_attention ............. None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   sparse_gradients_enabled ..... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   steps_per_print .............. 100
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   timers_config ................ enabled=True synchronized=True
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   train_batch_size ............. 256
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   train_micro_batch_size_per_gpu  1
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   use_data_before_expert_parallel_  False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   use_node_local_storage ....... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   wall_clock_breakdown ......... False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   weight_quantization_config ... None
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   world_size ................... 4
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   zero_allow_untested_optimizer  False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=DeepSpeedZeroOffloadParamConfig(device='none', nvme_path=None, buffer_count=5, buffer_size=100000000, max_in_cpu=1000000000, pin_memory=True) offload_optimizer=None sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50000000 param_persistence_threshold=100000 model_persistence_threshold=9223372036854775807 max_live_parameters=1000000000 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   zero_enabled ................. False
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   zero_force_ds_cpu_optimizer .. True
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,772] [INFO] [config.py:1003:print]   zero_optimization_stage ...... 0
+[36m(ReferenceModelRayActor pid=1877661)[0m [2025-07-31 09:02:25,773] [INFO] [config.py:989:print_user_config]   json = {
+[36m(ReferenceModelRayActor pid=1877661)[0m     "steps_per_print": 100, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "zero_optimization": {
+[36m(ReferenceModelRayActor pid=1877661)[0m         "stage": 0, 
+[36m(ReferenceModelRayActor pid=1877661)[0m         "stage3_param_persistence_threshold": "auto", 
+[36m(ReferenceModelRayActor pid=1877661)[0m         "offload_param": {
+[36m(ReferenceModelRayActor pid=1877661)[0m             "device": "none", 
+[36m(ReferenceModelRayActor pid=1877661)[0m             "pin_memory": true
+[36m(ReferenceModelRayActor pid=1877661)[0m         }
+[36m(ReferenceModelRayActor pid=1877661)[0m     }, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "bf16": {
+[36m(ReferenceModelRayActor pid=1877661)[0m         "enabled": true
+[36m(ReferenceModelRayActor pid=1877661)[0m     }, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "gradient_clipping": 1.0, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "prescale_gradients": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "wall_clock_breakdown": false, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "train_micro_batch_size_per_gpu": 1, 
+[36m(ReferenceModelRayActor pid=1877661)[0m     "train_batch_size": 256
+[36m(ReferenceModelRayActor pid=1877661)[0m }
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:26 selector.py:120] Using Flash Attention backend.
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:27 utils.py:922] Found nccl from library libnccl.so.2
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:27 pynccl.py:69] vLLM is using nccl==2.21.5
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:27 custom_all_reduce_utils.py:242] reading GPU P2P access cache from /root/.cache/vllm/gpu_p2p_access_cache_for_3,4.json
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:27 shm_broadcast.py:255] vLLM message queue communication handle: Handle(connect_ip='127.0.0.1', local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_6dcd99cd'), local_subscribe_port=47889, remote_subscribe_port=None)
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:27 model_runner.py:1092] Starting to load model /AIRPFS/lwt/model/llama-3.1-8b-instruct...
+[36m(LLMRayActor pid=1878117)[0m 
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[36m(ReferenceModelRayActor pid=1878114)[0m You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.[32m [repeated 3x across cluster][0m
+[36m(ReferenceModelRayActor pid=1878114)[0m 
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s][32m [repeated 4x across cluster][0m
+[36m(ReferenceModelRayActor pid=1878114)[0m 
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  4.33it/s][32m [repeated 12x across cluster][0m
+[36m(ReferenceModelRayActor pid=1878114)[0m 
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  4.44it/s]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  4.39it/s][32m [repeated 4x across cluster][0m
+[36m(LLMRayActor pid=1878117)[0m 
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:05,  1.90s/it]
+[36m(LLMRayActor pid=1878117)[0m 
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:03<00:03,  1.86s/it]
+[36m(LLMRayActor pid=1878117)[0m 
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04<00:01,  1.21s/it]
+[36m(LLMRayActor pid=1878117)[0m 
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.30s/it]
+[36m(LLMRayActor pid=1878117)[0m 
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.40s/it]
+[36m(LLMRayActor pid=1878117)[0m 
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:33 model_runner.py:1097] Loading model weights took 7.5122 GB
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:26 selector.py:120] Using Flash Attention backend.
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:27 utils.py:922] Found nccl from library libnccl.so.2
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:27 pynccl.py:69] vLLM is using nccl==2.21.5
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:27 custom_all_reduce_utils.py:242] reading GPU P2P access cache from /root/.cache/vllm/gpu_p2p_access_cache_for_3,4.json
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:27 model_runner.py:1092] Starting to load model /AIRPFS/lwt/model/llama-3.1-8b-instruct...
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:36 worker.py:241] Memory profiling takes 2.75 seconds
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:36 worker.py:241] the current vLLM instance can use total_gpu_memory (79.35GiB) x gpu_memory_utilization (0.90) = 71.41GiB
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:36 worker.py:241] model weights take 7.51GiB; non_torch_memory takes 1.57GiB; PyTorch activation peak memory takes 1.96GiB; the rest of the memory reserved for KV Cache is 60.37GiB.
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:36 distributed_gpu_executor.py:57] # GPU blocks: 61818, # CPU blocks: 4096
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:36 distributed_gpu_executor.py:61] Maximum concurrency for 31048 tokens per request: 31.86x
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:36,943] [INFO] [utils.py:781:see_memory_usage] Before initializing optimizer states
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:36,944] [INFO] [utils.py:782:see_memory_usage] MA 22.44 GB         Max_MA 22.44 GB         CA 22.44 GB         Max_CA 22 GB 
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:36,945] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 238.94 GB, percent = 12.7%
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,203] [INFO] [utils.py:781:see_memory_usage] After initializing optimizer states
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,204] [INFO] [utils.py:782:see_memory_usage] MA 22.44 GB         Max_MA 29.92 GB         CA 29.92 GB         Max_CA 30 GB 
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,205] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 238.28 GB, percent = 12.7%
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,205] [INFO] [stage_1_and_2.py:543:__init__] optimizer state initialized
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,454] [INFO] [utils.py:781:see_memory_usage] After initializing ZeRO optimizer
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,455] [INFO] [utils.py:782:see_memory_usage] MA 22.44 GB         Max_MA 22.44 GB         CA 29.92 GB         Max_CA 30 GB 
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,456] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 238.29 GB, percent = 12.7%
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,458] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = DeepSpeedZeroOptimizer
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,458] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,458] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = <torch.optim.lr_scheduler.LambdaLR object at 0x7fbe3df080a0>
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,458] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[2e-06, 2e-06], mom=[(0.9, 0.95), (0.9, 0.95)]
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,460] [INFO] [config.py:999:print] DeepSpeedEngine configuration:
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,460] [INFO] [config.py:1003:print]   activation_checkpointing_config  {
+[36m(ActorModelRayActor pid=1877505)[0m     "partition_activations": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "contiguous_memory_optimization": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "cpu_checkpointing": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "number_checkpoints": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "synchronize_checkpoint_boundary": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "profile": false
+[36m(ActorModelRayActor pid=1877505)[0m }
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,460] [INFO] [config.py:1003:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,460] [INFO] [config.py:1003:print]   amp_enabled .................. False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,460] [INFO] [config.py:1003:print]   amp_params ................... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   autotuning_config ............ {
+[36m(ActorModelRayActor pid=1877505)[0m     "enabled": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "start_step": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "end_step": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "metric_path": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "arg_mappings": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "metric": "throughput", 
+[36m(ActorModelRayActor pid=1877505)[0m     "model_info": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "results_dir": "autotuning_results", 
+[36m(ActorModelRayActor pid=1877505)[0m     "exps_dir": "autotuning_exps", 
+[36m(ActorModelRayActor pid=1877505)[0m     "overwrite": true, 
+[36m(ActorModelRayActor pid=1877505)[0m     "fast": true, 
+[36m(ActorModelRayActor pid=1877505)[0m     "start_profile_step": 3, 
+[36m(ActorModelRayActor pid=1877505)[0m     "end_profile_step": 5, 
+[36m(ActorModelRayActor pid=1877505)[0m     "tuner_type": "gridsearch", 
+[36m(ActorModelRayActor pid=1877505)[0m     "tuner_early_stopping": 5, 
+[36m(ActorModelRayActor pid=1877505)[0m     "tuner_num_trials": 50, 
+[36m(ActorModelRayActor pid=1877505)[0m     "model_info_path": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "mp_size": 1, 
+[36m(ActorModelRayActor pid=1877505)[0m     "max_train_batch_size": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "min_train_batch_size": 1, 
+[36m(ActorModelRayActor pid=1877505)[0m     "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+[36m(ActorModelRayActor pid=1877505)[0m     "min_train_micro_batch_size_per_gpu": 1, 
+[36m(ActorModelRayActor pid=1877505)[0m     "num_tuning_micro_batch_sizes": 3
+[36m(ActorModelRayActor pid=1877505)[0m }
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   bfloat16_enabled ............. True
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   bfloat16_immediate_grad_update  False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   checkpoint_parallel_write_pipeline  False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   checkpoint_tag_validation_enabled  True
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   checkpoint_tag_validation_fail  False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7fbe3df08220>
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   communication_data_type ...... None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   curriculum_enabled_legacy .... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   curriculum_params_legacy ..... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   data_efficiency_enabled ...... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   dataloader_drop_last ......... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   disable_allgather ............ False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   dump_state ................... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   dynamic_loss_scale_args ...... None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_enabled ........... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_gas_boundary_resolution  1
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_layer_num ......... 0
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_max_iter .......... 100
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_stability ......... 1e-06
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_tol ............... 0.01
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   eigenvalue_verbose ........... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,461] [INFO] [config.py:1003:print]   elasticity_enabled ........... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   flops_profiler_config ........ {
+[36m(ActorModelRayActor pid=1877505)[0m     "enabled": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "recompute_fwd_factor": 0.0, 
+[36m(ActorModelRayActor pid=1877505)[0m     "profile_step": 1, 
+[36m(ActorModelRayActor pid=1877505)[0m     "module_depth": -1, 
+[36m(ActorModelRayActor pid=1877505)[0m     "top_modules": 1, 
+[36m(ActorModelRayActor pid=1877505)[0m     "detailed": true, 
+[36m(ActorModelRayActor pid=1877505)[0m     "output_file": null
+[36m(ActorModelRayActor pid=1877505)[0m }
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   fp16_auto_cast ............... None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   fp16_enabled ................. False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   fp16_master_weights_and_gradients  False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   global_rank .................. 0
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   grad_accum_dtype ............. None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   gradient_accumulation_steps .. 64
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   gradient_clipping ............ 1.0
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   gradient_predivide_factor .... 1.0
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   graph_harvesting ............. False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   initial_dynamic_scale ........ 1
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   load_universal_checkpoint .... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   loss_scale ................... 1.0
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   memory_breakdown ............. False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   mics_hierarchial_params_gather  False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   mics_shard_size .............. -1
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   nebula_config ................ {
+[36m(ActorModelRayActor pid=1877505)[0m     "enabled": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "persistent_storage_path": null, 
+[36m(ActorModelRayActor pid=1877505)[0m     "persistent_time_interval": 100, 
+[36m(ActorModelRayActor pid=1877505)[0m     "num_of_version_in_retention": 2, 
+[36m(ActorModelRayActor pid=1877505)[0m     "enable_nebula_load": true, 
+[36m(ActorModelRayActor pid=1877505)[0m     "load_path": null
+[36m(ActorModelRayActor pid=1877505)[0m }
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   optimizer_legacy_fusion ...... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   optimizer_name ............... None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   optimizer_params ............. None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   pld_enabled .................. False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   pld_params ................... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   prescale_gradients ........... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   scheduler_name ............... None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   scheduler_params ............. None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   seq_parallel_communication_data_type  torch.float32
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   sparse_attention ............. None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,462] [INFO] [config.py:1003:print]   sparse_gradients_enabled ..... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   steps_per_print .............. 100
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   timers_config ................ enabled=True synchronized=True
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   train_batch_size ............. 256
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   train_micro_batch_size_per_gpu  1
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   use_data_before_expert_parallel_  False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   use_node_local_storage ....... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   wall_clock_breakdown ......... False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   weight_quantization_config ... None
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   world_size ................... 4
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   zero_allow_untested_optimizer  False
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   zero_config .................. stage=2 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=True load_from_fp32_weights=True elastic_checkpoint=False offload_param=DeepSpeedZeroOffloadParamConfig(device='none', nvme_path=None, buffer_count=5, buffer_size=100000000, max_in_cpu=1000000000, pin_memory=False) offload_optimizer=DeepSpeedZeroOffloadOptimizerConfig(device='none', nvme_path=None, buffer_count=4, pin_memory=True, pipeline_read=False, pipeline_write=False, fast_init=False, ratio=1.0) sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50000000 param_persistence_threshold=100000 model_persistence_threshold=9223372036854775807 max_live_parameters=1000000000 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   zero_enabled ................. True
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   zero_force_ds_cpu_optimizer .. True
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:1003:print]   zero_optimization_stage ...... 2
+[36m(ActorModelRayActor pid=1877505)[0m [2025-07-31 09:02:37,463] [INFO] [config.py:989:print_user_config]   json = {
+[36m(ActorModelRayActor pid=1877505)[0m     "steps_per_print": 100, 
+[36m(ActorModelRayActor pid=1877505)[0m     "zero_optimization": {
+[36m(ActorModelRayActor pid=1877505)[0m         "stage": 2, 
+[36m(ActorModelRayActor pid=1877505)[0m         "offload_param": {
+[36m(ActorModelRayActor pid=1877505)[0m             "device": "none"
+[36m(ActorModelRayActor pid=1877505)[0m         }, 
+[36m(ActorModelRayActor pid=1877505)[0m         "offload_optimizer": {
+[36m(ActorModelRayActor pid=1877505)[0m             "device": "none", 
+[36m(ActorModelRayActor pid=1877505)[0m             "pin_memory": true
+[36m(ActorModelRayActor pid=1877505)[0m         }, 
+[36m(ActorModelRayActor pid=1877505)[0m         "sub_group_size": "auto", 
+[36m(ActorModelRayActor pid=1877505)[0m         "stage3_max_live_parameters": "auto", 
+[36m(ActorModelRayActor pid=1877505)[0m         "stage3_max_reuse_distance": "auto", 
+[36m(ActorModelRayActor pid=1877505)[0m         "stage3_param_persistence_threshold": "auto", 
+[36m(ActorModelRayActor pid=1877505)[0m         "stage3_prefetch_bucket_size": "auto", 
+[36m(ActorModelRayActor pid=1877505)[0m         "reduce_bucket_size": "auto", 
+[36m(ActorModelRayActor pid=1877505)[0m         "zero_hpz_partition_size": 1, 
+[36m(ActorModelRayActor pid=1877505)[0m         "zero_quantized_weights": false, 
+[36m(ActorModelRayActor pid=1877505)[0m         "zero_quantized_gradients": false, 
+[36m(ActorModelRayActor pid=1877505)[0m         "overlap_comm": true, 
+[36m(ActorModelRayActor pid=1877505)[0m         "contiguous_gradients": true
+[36m(ActorModelRayActor pid=1877505)[0m     }, 
+[36m(ActorModelRayActor pid=1877505)[0m     "bf16": {
+[36m(ActorModelRayActor pid=1877505)[0m         "enabled": true
+[36m(ActorModelRayActor pid=1877505)[0m     }, 
+[36m(ActorModelRayActor pid=1877505)[0m     "gradient_clipping": 1.0, 
+[36m(ActorModelRayActor pid=1877505)[0m     "prescale_gradients": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "wall_clock_breakdown": false, 
+[36m(ActorModelRayActor pid=1877505)[0m     "data_types": {
+[36m(ActorModelRayActor pid=1877505)[0m         "grad_accum_dtype": null
+[36m(ActorModelRayActor pid=1877505)[0m     }, 
+[36m(ActorModelRayActor pid=1877505)[0m     "train_micro_batch_size_per_gpu": 1, 
+[36m(ActorModelRayActor pid=1877505)[0m     "train_batch_size": 256
+[36m(ActorModelRayActor pid=1877505)[0m }
+[36m(ActorModelRayActor pid=1877505)[0m Namespace(ref_num_nodes=1, ref_num_gpus_per_node=4, reward_num_nodes=1, reward_num_gpus_per_node=8, colocate_actor_ref=True, actor_num_nodes=1, actor_num_gpus_per_node=4, critic_num_nodes=1, critic_num_gpus_per_node=8, colocate_critic_reward=False, vllm_num_engines=1, vllm_tensor_parallel_size=2, vllm_sync_backend='nccl', enable_prefix_caching=False, enforce_eager=False, eval_steps=-1, save_steps=5, logging_steps=1, ckpt_path='trainning_results/results/ckpts/llama-3.1-8b-instruct-rl-ours-v3.0.14-stage1', max_ckpt_num=30, max_ckpt_mem=100000000.0, load_checkpoint=True, local_rank=0, zero_stage=2, gradient_checkpointing=True, bf16=True, enable_ema=False, zpg=1, adam_offload=False, actor_init_on_gpu=False, flash_attn=True, grad_accum_dtype=None, overlap_comm=True, gradient_checkpointing_use_reentrant=False, disable_fast_tokenizer=False, packing_samples=True, load_in_4bit=False, lora_rank=0, lora_alpha=16, target_modules='all-linear', lora_dropout=0, save_path='trainning_results/ckpts/llama-3.1-8b-instruct-rl-ours-v3.0.14-stage1', num_episodes=10000, rollout_batch_size=64, micro_rollout_batch_size=1, max_epochs=1, prompt_max_len=2048, generate_max_len=29000, max_len=None, max_samples=100000, max_norm=1.0, l2=0.0, ptx_coef=0.05, eps_clip=0.2, value_clip=0.2, lambd=0.95, gamma=1, micro_train_batch_size=1, train_batch_size=256, normalize_reward=False, top_p=1.0, temperature=1.0, seed=42, freezing_actor_steps=-1, n_samples_per_prompt=16, save_value_network=False, actor_learning_rate=2e-06, critic_learning_rate=9e-06, lr_warmup_ratio=0.0, kl_target=None, init_kl_coef=0.0, use_kl_estimator_k3=False, aux_loss_coef=0, adam_betas=(0.9, 0.95), reward_clip_range=(-10, 10), advantage_estimator='reinforce_baseline', pretrain='/AIRPFS/lwt/model/llama-3.1-8b-instruct', reward_pretrain=None, remote_rm_url=['http://localhost:1278/get_reward'], critic_pretrain=None, value_head_prefix='score', ref_reward_offload=False, prompt_data='/AIRPFS/lwt/training_data/math/sampled_math_dataset_v8_stage1_new.jsonl', prompt_data_probs='1.0', prompt_split='train', pretrain_data=None, pretrain_data_probs='1.0', pretrain_split='train', input_key='question', input_template=None, apply_chat_template=True, use_wandb='xxx', wandb_org=None, wandb_group=None, wandb_project='openrlhf_train_ppo', wandb_run_name='llama-3.1-8b-instruct-rl-ours-v3.0.14-stage1', use_tensorboard=None, perf=False, apply_uncompleted_filter=False, apply_query_filter=False, apply_select_response_by_prm=False, apply_select_response_longer_pos=False, group_method=None, use_length_reward_in_efficiency=False, use_kl_loss=False, random_temperature=False)
+[36m(ActorModelRayActor pid=1877660)[0m [rank3]:[W731 09:02:37.058424326 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 3]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:39 model_runner.py:1413] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:39 model_runner.py:1417] If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:33 model_runner.py:1097] Loading model weights took 7.5122 GB
+[36m(ActorModelRayActor pid=1877505)[0m wandb: Currently logged in as: liwt23 (liwt23-tsinghua-university) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+[36m(ActorModelRayActor pid=1877505)[0m wandb: WARNING Using a boolean value for 'reinit' is deprecated. Use 'return_previous' or 'finish_previous' instead.
+[36m(ActorModelRayActor pid=1877505)[0m wandb: creating run
+[36m(ActorModelRayActor pid=1877505)[0m wandb: Tracking run with wandb version 0.19.10
+[36m(ActorModelRayActor pid=1877505)[0m wandb: Run data is saved locally in /AIRPFS/lwt/R1-Searcher/scripts/wandb/run-20250731_090239-x9wzdkdm
+[36m(ActorModelRayActor pid=1877505)[0m wandb: Run `wandb offline` to turn off syncing.
+[36m(ActorModelRayActor pid=1877505)[0m wandb: Syncing run llama-3.1-8b-instruct-rl-ours-v3.0.14-stage1
+[36m(ActorModelRayActor pid=1877505)[0m wandb: ⭐️ View project at https://wandb.ai/liwt23-tsinghua-university/openrlhf_train_ppo
+[36m(ActorModelRayActor pid=1877505)[0m wandb: 🚀 View run at https://wandb.ai/liwt23-tsinghua-university/openrlhf_train_ppo/runs/x9wzdkdm
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:56 custom_all_reduce.py:224] Registering 2275 cuda graph addresses
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:36 worker.py:241] Memory profiling takes 2.71 seconds
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:36 worker.py:241] the current vLLM instance can use total_gpu_memory (79.35GiB) x gpu_memory_utilization (0.90) = 71.41GiB
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:36 worker.py:241] model weights take 7.51GiB; non_torch_memory takes 1.57GiB; PyTorch activation peak memory takes 1.96GiB; the rest of the memory reserved for KV Cache is 60.37GiB.
+[36m(ActorModelRayActor pid=1877505)[0m Namespace(ref_num_nodes=1, ref_num_gpus_per_node=4, reward_num_nodes=1, reward_num_gpus_per_node=8, colocate_actor_ref=True, actor_num_nodes=1, actor_num_gpus_per_node=4, critic_num_nodes=1, critic_num_gpus_per_node=8, colocate_critic_reward=False, vllm_num_engines=1, vllm_tensor_parallel_size=2, vllm_sync_backend='nccl', enable_prefix_caching=False, enforce_eager=False, eval_steps=-1, save_steps=5, logging_steps=1, ckpt_path='trainning_results/results/ckpts/llama-3.1-8b-instruct-rl-ours-v3.0.14-stage1', max_ckpt_num=30, max_ckpt_mem=100000000.0, load_checkpoint=True, local_rank=0, zero_stage=2, gradient_checkpointing=True, bf16=True, enable_ema=False, zpg=1, adam_offload=False, actor_init_on_gpu=False, flash_attn=True, grad_accum_dtype=None, overlap_comm=True, gradient_checkpointing_use_reentrant=False, disable_fast_tokenizer=False, packing_samples=True, load_in_4bit=False, lora_rank=0, lora_alpha=16, target_modules='all-linear', lora_dropout=0, save_path='trainning_results/ckpts/llama-3.1-8b-instruct-rl-ours-v3.0.14-stage1', num_episodes=10000, rollout_batch_size=64, micro_rollout_batch_size=1, max_epochs=1, prompt_max_len=2048, generate_max_len=29000, max_len=None, max_samples=100000, max_norm=1.0, l2=0.0, ptx_coef=0.05, eps_clip=0.2, value_clip=0.2, lambd=0.95, gamma=1, micro_train_batch_size=1, train_batch_size=256, normalize_reward=False, top_p=1.0, temperature=1.0, seed=42, freezing_actor_steps=-1, n_samples_per_prompt=16, save_value_network=False, actor_learning_rate=2e-06, critic_learning_rate=9e-06, lr_warmup_ratio=0.0, kl_target=None, init_kl_coef=0.0, use_kl_estimator_k3=False, aux_loss_coef=0, adam_betas=(0.9, 0.95), reward_clip_range=(-10, 10), advantage_estimator='reinforce_baseline', pretrain='/AIRPFS/lwt/model/llama-3.1-8b-instruct', reward_pretrain=None, remote_rm_url=['http://localhost:1278/get_reward'], critic_pretrain=None, value_head_prefix='score', ref_reward_offload=False, prompt_data='/AIRPFS/lwt/training_data/math/sampled_math_dataset_v8_stage1_new.jsonl', prompt_data_probs='1.0', prompt_split='train', pretrain_data=None, pretrain_data_probs='1.0', pretrain_split='train', input_key='question', input_template=None, apply_chat_template=True, use_wandb='xxx', wandb_org=None, wandb_group=None, wandb_project='openrlhf_train_ppo', wandb_run_name='llama-3.1-8b-instruct-rl-ours-v3.0.14-stage1', use_tensorboard=None, perf=False, apply_uncompleted_filter=False, apply_query_filter=False, apply_select_response_by_prm=False, apply_select_response_longer_pos=False, group_method=None, use_length_reward_in_efficiency=False, use_kl_loss=False, random_temperature=False)[32m [repeated 7x across cluster][0m
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:38 model_runner.py:1413] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:39 model_runner.py:1417] If out-of-memory error occurs during cudagraph capture, consider decreasing `gpu_memory_utilization` or switching to eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+[36m(RayWorkerWrapper pid=1878816)[0m INFO 07-31 09:02:58 model_runner.py:1527] Graph capturing finished in 19 secs, took 0.24 GiB
+[36m(LLMRayActor pid=1878117)[0m INFO 07-31 09:02:58 llm_engine.py:446] init engine (profile, create kv cache, warmup model) took 24.62 seconds
+[36m(ActorModelRayActor pid=1877505)[0m [rank0]:[W731 09:02:59.343816950 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.[32m [repeated 3x across cluster][0m
+[36m(LLMRayActor pid=1878117)[0m init_process_group: master_address=192.168.0.14, master_port=42741,  rank=1, world_size=3, group_name=openrlhf
+[36m(ActorModelRayActor pid=1877505)[0m 
+Episode [1/10000]:   0%|          | 0/22 [00:00<?, ?it/s]
+[36m(ActorModelRayActor pid=1877505)[0m 91 256 1 64 16
+[36m(ActorModelRayActor pid=1877505)[0m 64 22
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 0/256 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 1/256 [00:05<23:56,  5.63s/it, est. speed input: 84.67 toks/s, output: 4.26 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   1%|          | 2/256 [00:05<10:26,  2.47s/it, est. speed input: 162.63 toks/s, output: 9.01 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   1%|          | 3/256 [00:06<06:31,  1.55s/it, est. speed input: 226.82 toks/s, output: 14.36 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 4/256 [00:06<04:20,  1.03s/it, est. speed input: 291.08 toks/s, output: 20.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 5/256 [00:06<02:59,  1.40it/s, est. speed input: 358.66 toks/s, output: 26.72 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 6/256 [00:06<02:15,  1.85it/s, est. speed input: 442.18 toks/s, output: 33.16 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   3%|▎         | 7/256 [00:07<02:07,  1.96it/s, est. speed input: 469.18 toks/s, output: 39.13 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   4%|▎         | 9/256 [00:07<01:14,  3.33it/s, est. speed input: 571.08 toks/s, output: 54.55 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   4%|▍         | 11/256 [00:07<00:50,  4.80it/s, est. speed input: 667.32 toks/s, output: 70.14 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   5%|▍         | 12/256 [00:07<00:52,  4.61it/s, est. speed input: 695.25 toks/s, output: 76.77 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   6%|▋         | 16/256 [00:08<00:29,  8.15it/s, est. speed input: 916.35 toks/s, output: 110.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   7%|▋         | 18/256 [00:08<00:30,  7.71it/s, est. speed input: 976.25 toks/s, output: 125.12 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   8%|▊         | 21/256 [00:08<00:24,  9.52it/s, est. speed input: 1151.23 toks/s, output: 150.94 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   9%|▉         | 23/256 [00:08<00:22, 10.36it/s, est. speed input: 1251.73 toks/s, output: 168.16 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  11%|█         | 27/256 [00:09<00:19, 11.61it/s, est. speed input: 1396.25 toks/s, output: 202.21 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  11%|█▏        | 29/256 [00:09<00:25,  9.02it/s, est. speed input: 1452.19 toks/s, output: 215.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  12%|█▏        | 31/256 [00:09<00:22,  9.90it/s, est. speed input: 1566.31 toks/s, output: 233.69 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  14%|█▍        | 36/256 [00:09<00:14, 15.00it/s, est. speed input: 1770.29 toks/s, output: 284.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  16%|█▌        | 41/256 [00:09<00:11, 18.36it/s, est. speed input: 2052.06 toks/s, output: 334.25 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  18%|█▊        | 45/256 [00:10<00:15, 13.91it/s, est. speed input: 2160.65 toks/s, output: 364.06 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  20%|█▉        | 50/256 [00:10<00:11, 18.04it/s, est. speed input: 2365.74 toks/s, output: 418.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  21%|██        | 54/256 [00:10<00:09, 20.51it/s, est. speed input: 2515.91 toks/s, output: 460.51 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  22%|██▏       | 57/256 [00:11<00:15, 12.83it/s, est. speed input: 2531.54 toks/s, output: 476.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  23%|██▎       | 59/256 [00:11<00:14, 13.27it/s, est. speed input: 2578.24 toks/s, output: 495.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  24%|██▍       | 61/256 [00:11<00:15, 12.94it/s, est. speed input: 2616.64 toks/s, output: 513.62 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  26%|██▌       | 66/256 [00:11<00:10, 18.20it/s, est. speed input: 2788.52 toks/s, output: 571.74 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  27%|██▋       | 70/256 [00:11<00:08, 21.26it/s, est. speed input: 2915.60 toks/s, output: 617.48 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  29%|██▊       | 73/256 [00:11<00:08, 22.03it/s, est. speed input: 2999.93 toks/s, output: 650.28 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  30%|███       | 77/256 [00:11<00:07, 24.79it/s, est. speed input: 3127.22 toks/s, output: 696.42 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  31%|███▏      | 80/256 [00:12<00:07, 24.88it/s, est. speed input: 3213.04 toks/s, output: 729.43 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  32%|███▏      | 83/256 [00:12<00:07, 22.98it/s, est. speed input: 3290.75 toks/s, output: 760.15 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  34%|███▎      | 86/256 [00:12<00:07, 21.80it/s, est. speed input: 3371.71 toks/s, output: 791.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  35%|███▍      | 89/256 [00:12<00:07, 22.82it/s, est. speed input: 3489.79 toks/s, output: 825.12 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  36%|███▌      | 92/256 [00:12<00:06, 23.67it/s, est. speed input: 3560.51 toks/s, output: 858.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  37%|███▋      | 95/256 [00:12<00:07, 22.35it/s, est. speed input: 3637.06 toks/s, output: 890.38 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  38%|███▊      | 98/256 [00:12<00:08, 18.73it/s, est. speed input: 3700.63 toks/s, output: 917.51 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  39%|███▉      | 101/256 [00:13<00:16,  9.14it/s, est. speed input: 3602.10 toks/s, output: 912.23 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  40%|████      | 103/256 [00:13<00:18,  8.25it/s, est. speed input: 3604.74 toks/s, output: 921.49 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  41%|████      | 105/256 [00:14<00:19,  7.63it/s, est. speed input: 3593.75 toks/s, output: 931.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  42%|████▏     | 107/256 [00:14<00:19,  7.46it/s, est. speed input: 3576.26 toks/s, output: 944.51 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  43%|████▎     | 110/256 [00:14<00:14, 10.05it/s, est. speed input: 3644.10 toks/s, output: 985.03 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  44%|████▍     | 112/256 [00:14<00:14,  9.88it/s, est. speed input: 3650.22 toks/s, output: 1003.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  45%|████▍     | 114/256 [00:15<00:13, 10.74it/s, est. speed input: 3676.87 toks/s, output: 1026.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  45%|████▌     | 116/256 [00:15<00:12, 10.91it/s, est. speed input: 3691.44 toks/s, output: 1046.60 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  46%|████▌     | 118/256 [00:15<00:13, 10.52it/s, est. speed input: 3704.63 toks/s, output: 1065.20 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  47%|████▋     | 120/256 [00:15<00:12, 10.79it/s, est. speed input: 3727.82 toks/s, output: 1086.42 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  48%|████▊     | 123/256 [00:15<00:12, 10.37it/s, est. speed input: 3743.86 toks/s, output: 1115.07 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  49%|████▉     | 125/256 [00:16<00:11, 11.25it/s, est. speed input: 3760.88 toks/s, output: 1139.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  50%|████▉     | 127/256 [00:16<00:11, 11.39it/s, est. speed input: 3780.16 toks/s, output: 1161.71 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  51%|█████     | 131/256 [00:16<00:07, 16.03it/s, est. speed input: 3872.45 toks/s, output: 1221.57 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  52%|█████▏    | 133/256 [00:16<00:14,  8.77it/s, est. speed input: 3795.51 toks/s, output: 1217.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  53%|█████▎    | 135/256 [00:17<00:20,  6.01it/s, est. speed input: 3718.85 toks/s, output: 1209.01 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  54%|█████▎    | 137/256 [00:18<00:23,  5.12it/s, est. speed input: 3651.50 toks/s, output: 1209.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  54%|█████▍    | 139/256 [00:18<00:20,  5.78it/s, est. speed input: 3655.84 toks/s, output: 1232.50 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  55%|█████▌    | 141/256 [00:18<00:18,  6.08it/s, est. speed input: 3653.72 toks/s, output: 1251.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  56%|█████▌    | 143/256 [00:19<00:23,  4.86it/s, est. speed input: 3593.53 toks/s, output: 1250.42 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  56%|█████▋    | 144/256 [00:19<00:21,  5.14it/s, est. speed input: 3589.31 toks/s, output: 1261.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 147/256 [00:19<00:14,  7.57it/s, est. speed input: 3630.47 toks/s, output: 1312.36 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  58%|█████▊    | 149/256 [00:20<00:19,  5.52it/s, est. speed input: 3565.78 toks/s, output: 1313.76 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  59%|█████▊    | 150/256 [00:20<00:18,  5.62it/s, est. speed input: 3556.44 toks/s, output: 1324.05 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  59%|█████▉    | 152/256 [00:20<00:15,  6.66it/s, est. speed input: 3563.47 toks/s, output: 1353.38 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  60%|██████    | 154/256 [00:20<00:13,  7.59it/s, est. speed input: 3570.76 toks/s, output: 1383.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████    | 156/256 [00:21<00:14,  6.78it/s, est. speed input: 3560.08 toks/s, output: 1401.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████▏   | 157/256 [00:22<00:31,  3.14it/s, est. speed input: 3402.96 toks/s, output: 1354.61 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▏   | 158/256 [00:22<00:27,  3.58it/s, est. speed input: 3402.89 toks/s, output: 1368.97 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▎   | 160/256 [00:22<00:21,  4.47it/s, est. speed input: 3400.32 toks/s, output: 1397.70 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  63%|██████▎   | 161/256 [00:22<00:20,  4.66it/s, est. speed input: 3392.23 toks/s, output: 1409.21 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  63%|██████▎   | 162/256 [00:22<00:18,  4.99it/s, est. speed input: 3386.01 toks/s, output: 1422.49 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▎   | 163/256 [00:22<00:17,  5.32it/s, est. speed input: 3380.01 toks/s, output: 1435.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▍   | 164/256 [00:23<00:17,  5.22it/s, est. speed input: 3372.26 toks/s, output: 1446.43 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▍   | 165/256 [00:23<00:16,  5.54it/s, est. speed input: 3371.87 toks/s, output: 1460.15 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  65%|██████▍   | 166/256 [00:23<00:17,  5.00it/s, est. speed input: 3354.76 toks/s, output: 1467.90 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  65%|██████▌   | 167/256 [00:23<00:20,  4.26it/s, est. speed input: 3325.64 toks/s, output: 1471.56 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▌   | 168/256 [00:24<00:17,  4.93it/s, est. speed input: 3324.12 toks/s, output: 1487.53 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▌   | 169/256 [00:24<00:28,  3.01it/s, est. speed input: 3260.80 toks/s, output: 1472.12 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  67%|██████▋   | 171/256 [00:24<00:19,  4.44it/s, est. speed input: 3273.60 toks/s, output: 1507.32 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  68%|██████▊   | 173/256 [00:25<00:17,  4.70it/s, est. speed input: 3259.28 toks/s, output: 1531.19 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  68%|██████▊   | 174/256 [00:25<00:16,  4.92it/s, est. speed input: 3252.85 toks/s, output: 1544.93 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  69%|██████▉   | 176/256 [00:25<00:11,  6.76it/s, est. speed input: 3271.50 toks/s, output: 1585.62 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|██████▉   | 178/256 [00:25<00:11,  7.07it/s, est. speed input: 3280.30 toks/s, output: 1617.77 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|██████▉   | 179/256 [00:26<00:11,  6.44it/s, est. speed input: 3273.82 toks/s, output: 1629.05 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|███████   | 180/256 [00:26<00:14,  5.17it/s, est. speed input: 3250.11 toks/s, output: 1633.50 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████   | 181/256 [00:26<00:17,  4.23it/s, est. speed input: 3219.38 toks/s, output: 1635.61 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████   | 182/256 [00:26<00:15,  4.86it/s, est. speed input: 3221.80 toks/s, output: 1653.41 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████▏  | 183/256 [00:27<00:14,  5.00it/s, est. speed input: 3213.93 toks/s, output: 1667.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  72%|███████▏  | 185/256 [00:27<00:10,  6.73it/s, est. speed input: 3232.41 toks/s, output: 1707.28 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  73%|███████▎  | 187/256 [00:27<00:07,  8.77it/s, est. speed input: 3247.77 toks/s, output: 1750.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  74%|███████▍  | 189/256 [00:28<00:13,  5.02it/s, est. speed input: 3196.64 toks/s, output: 1756.59 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  74%|███████▍  | 190/256 [00:28<00:12,  5.49it/s, est. speed input: 3197.34 toks/s, output: 1775.22 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▌  | 193/256 [00:28<00:09,  6.82it/s, est. speed input: 3203.35 toks/s, output: 1832.49 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  76%|███████▌  | 194/256 [00:28<00:13,  4.69it/s, est. speed input: 3159.77 toks/s, output: 1826.37 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  76%|███████▌  | 195/256 [00:29<00:18,  3.29it/s, est. speed input: 3107.45 toks/s, output: 1812.86 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  77%|███████▋  | 197/256 [00:29<00:12,  4.59it/s, est. speed input: 3124.35 toks/s, output: 1857.94 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  77%|███████▋  | 198/256 [00:29<00:12,  4.49it/s, est. speed input: 3116.47 toks/s, output: 1870.12 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  78%|███████▊  | 200/256 [00:30<00:09,  6.04it/s, est. speed input: 3138.76 toks/s, output: 1915.89 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  79%|███████▉  | 203/256 [00:30<00:09,  5.77it/s, est. speed input: 3132.30 toks/s, output: 1963.20 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  80%|████████  | 205/256 [00:30<00:07,  6.98it/s, est. speed input: 3150.07 toks/s, output: 2009.68 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  81%|████████▏ | 208/256 [00:31<00:05,  8.89it/s, est. speed input: 3181.99 toks/s, output: 2080.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  82%|████████▏ | 210/256 [00:31<00:08,  5.18it/s, est. speed input: 3124.32 toks/s, output: 2084.33 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  83%|████████▎ | 212/256 [00:32<00:09,  4.88it/s, est. speed input: 3108.30 toks/s, output: 2111.87 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  83%|████████▎ | 213/256 [00:32<00:10,  3.94it/s, est. speed input: 3072.90 toks/s, output: 2109.37 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▎ | 214/256 [00:32<00:10,  4.16it/s, est. speed input: 3074.77 toks/s, output: 2127.57 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▍ | 216/256 [00:33<00:07,  5.03it/s, est. speed input: 3085.31 toks/s, output: 2171.74 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▌ | 219/256 [00:33<00:05,  7.09it/s, est. speed input: 3116.27 toks/s, output: 2249.73 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▌ | 220/256 [00:33<00:06,  5.20it/s, est. speed input: 3091.08 toks/s, output: 2251.25 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▋ | 221/256 [00:33<00:06,  5.57it/s, est. speed input: 3094.20 toks/s, output: 2273.75 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 222/256 [00:35<00:14,  2.31it/s, est. speed input: 2987.62 toks/s, output: 2219.58 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 223/256 [00:37<00:26,  1.25it/s, est. speed input: 2842.30 toks/s, output: 2136.72 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 224/256 [00:38<00:26,  1.19it/s, est. speed input: 2787.07 toks/s, output: 2117.53 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 225/256 [00:38<00:20,  1.49it/s, est. speed input: 2785.85 toks/s, output: 2141.11 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 226/256 [00:38<00:16,  1.83it/s, est. speed input: 2783.16 toks/s, output: 2164.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▊ | 227/256 [00:38<00:13,  2.19it/s, est. speed input: 2779.08 toks/s, output: 2186.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▉ | 228/256 [00:39<00:10,  2.71it/s, est. speed input: 2778.17 toks/s, output: 2213.21 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▉ | 229/256 [00:39<00:11,  2.34it/s, est. speed input: 2747.80 toks/s, output: 2217.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  90%|████████▉ | 230/256 [00:39<00:08,  2.90it/s, est. speed input: 2749.55 toks/s, output: 2244.74 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  90%|█████████ | 231/256 [00:40<00:07,  3.24it/s, est. speed input: 2744.82 toks/s, output: 2268.25 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████ | 232/256 [00:40<00:06,  3.83it/s, est. speed input: 2744.22 toks/s, output: 2295.97 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████ | 233/256 [00:40<00:06,  3.80it/s, est. speed input: 2735.59 toks/s, output: 2317.15 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  92%|█████████▏| 235/256 [00:43<00:16,  1.24it/s, est. speed input: 2579.60 toks/s, output: 2234.86 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  93%|█████████▎| 237/256 [00:44<00:13,  1.45it/s, est. speed input: 2539.05 toks/s, output: 2260.72 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  93%|█████████▎| 238/256 [00:44<00:11,  1.61it/s, est. speed input: 2528.65 toks/s, output: 2281.37 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  93%|█████████▎| 239/256 [00:44<00:09,  1.87it/s, est. speed input: 2523.65 toks/s, output: 2308.44 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  94%|█████████▍| 240/256 [00:45<00:07,  2.01it/s, est. speed input: 2515.91 toks/s, output: 2329.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  94%|█████████▍| 241/256 [00:45<00:06,  2.30it/s, est. speed input: 2510.48 toks/s, output: 2356.05 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  95%|█████████▍| 242/256 [00:47<00:10,  1.28it/s, est. speed input: 2434.15 toks/s, output: 2313.99 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▌| 245/256 [00:50<00:09,  1.15it/s, est. speed input: 2331.84 toks/s, output: 2306.74 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▌| 246/256 [00:50<00:07,  1.27it/s, est. speed input: 2319.37 toks/s, output: 2330.73 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▋| 247/256 [00:54<00:13,  1.55s/it, est. speed input: 2152.31 toks/s, output: 2201.63 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  97%|█████████▋| 248/256 [00:56<00:13,  1.64s/it, est. speed input: 2086.16 toks/s, output: 2175.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  97%|█████████▋| 249/256 [00:57<00:10,  1.55s/it, est. speed input: 2047.90 toks/s, output: 2176.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  98%|█████████▊| 250/256 [00:58<00:07,  1.22s/it, est. speed input: 2043.26 toks/s, output: 2214.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  98%|█████████▊| 251/256 [00:59<00:06,  1.33s/it, est. speed input: 1999.50 toks/s, output: 2206.99 toks/s]
+Processed prompts: 100%|██████████| 256/256 [00:59<00:00,  4.27it/s, est. speed input: 2038.59 toks/s, output: 2463.34 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 0/256 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 1/256 [00:04<20:17,  4.77s/it, est. speed input: 100.75 toks/s, output: 3.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   1%|          | 2/256 [00:05<09:18,  2.20s/it, est. speed input: 185.98 toks/s, output: 7.73 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   1%|          | 3/256 [00:05<05:25,  1.29s/it, est. speed input: 268.65 toks/s, output: 12.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 4/256 [00:05<04:10,  1.01it/s, est. speed input: 322.44 toks/s, output: 18.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 5/256 [00:06<03:06,  1.35it/s, est. speed input: 381.79 toks/s, output: 24.46 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   4%|▎         | 9/256 [00:06<01:10,  3.52it/s, est. speed input: 614.59 toks/s, output: 52.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   4%|▍         | 10/256 [00:06<01:10,  3.49it/s, est. speed input: 644.25 toks/s, output: 58.89 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   5%|▍         | 12/256 [00:06<00:51,  4.74it/s, est. speed input: 743.68 toks/s, output: 74.57 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   6%|▌         | 15/256 [00:07<00:33,  7.10it/s, est. speed input: 903.38 toks/s, output: 98.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   7%|▋         | 18/256 [00:07<00:28,  8.48it/s, est. speed input: 1037.71 toks/s, output: 121.97 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   8%|▊         | 20/256 [00:07<00:26,  8.90it/s, est. speed input: 1121.53 toks/s, output: 137.64 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   9%|▊         | 22/256 [00:07<00:31,  7.43it/s, est. speed input: 1180.98 toks/s, output: 150.70 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   9%|▉         | 23/256 [00:08<00:33,  6.94it/s, est. speed input: 1200.74 toks/s, output: 157.39 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   9%|▉         | 24/256 [00:08<00:33,  6.94it/s, est. speed input: 1241.63 toks/s, output: 165.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  11%|█         | 27/256 [00:08<00:23,  9.92it/s, est. speed input: 1370.58 toks/s, output: 193.51 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  11%|█▏        | 29/256 [00:08<00:25,  8.83it/s, est. speed input: 1434.96 toks/s, output: 208.55 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  12%|█▏        | 31/256 [00:08<00:25,  8.71it/s, est. speed input: 1482.48 toks/s, output: 225.06 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  12%|█▎        | 32/256 [00:09<00:28,  7.83it/s, est. speed input: 1493.74 toks/s, output: 231.86 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  14%|█▍        | 37/256 [00:09<00:15, 13.85it/s, est. speed input: 1706.91 toks/s, output: 285.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  16%|█▋        | 42/256 [00:09<00:11, 19.13it/s, est. speed input: 1897.62 toks/s, output: 339.30 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  18%|█▊        | 45/256 [00:09<00:12, 17.25it/s, est. speed input: 1986.30 toks/s, output: 366.68 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  19%|█▉        | 48/256 [00:09<00:13, 15.13it/s, est. speed input: 2057.63 toks/s, output: 393.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  20%|██        | 52/256 [00:09<00:11, 18.42it/s, est. speed input: 2205.72 toks/s, output: 437.43 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  21%|██▏       | 55/256 [00:10<00:11, 18.15it/s, est. speed input: 2306.05 toks/s, output: 467.65 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  23%|██▎       | 58/256 [00:10<00:10, 19.40it/s, est. speed input: 2393.03 toks/s, output: 499.80 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  24%|██▍       | 61/256 [00:10<00:11, 17.58it/s, est. speed input: 2477.72 toks/s, output: 528.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  25%|██▍       | 63/256 [00:10<00:12, 15.97it/s, est. speed input: 2524.23 toks/s, output: 546.19 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  25%|██▌       | 65/256 [00:10<00:11, 16.00it/s, est. speed input: 2564.27 toks/s, output: 566.39 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  26%|██▌       | 67/256 [00:10<00:14, 12.90it/s, est. speed input: 2586.22 toks/s, output: 580.79 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  27%|██▋       | 69/256 [00:11<00:17, 10.60it/s, est. speed input: 2588.62 toks/s, output: 593.61 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  28%|██▊       | 71/256 [00:11<00:18,  9.85it/s, est. speed input: 2614.01 toks/s, output: 609.30 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  29%|██▊       | 73/256 [00:11<00:20,  8.89it/s, est. speed input: 2618.10 toks/s, output: 623.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  29%|██▉       | 75/256 [00:11<00:18,  9.69it/s, est. speed input: 2648.97 toks/s, output: 643.85 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  31%|███       | 79/256 [00:12<00:13, 13.39it/s, est. speed input: 2750.83 toks/s, output: 693.13 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  32%|███▏      | 81/256 [00:12<00:15, 11.10it/s, est. speed input: 2758.34 toks/s, output: 707.21 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  32%|███▏      | 83/256 [00:12<00:17,  9.79it/s, est. speed input: 2764.91 toks/s, output: 721.55 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  33%|███▎      | 85/256 [00:12<00:19,  8.98it/s, est. speed input: 2767.77 toks/s, output: 736.63 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  34%|███▍      | 88/256 [00:13<00:14, 11.80it/s, est. speed input: 2851.73 toks/s, output: 775.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  35%|███▌      | 90/256 [00:13<00:12, 12.84it/s, est. speed input: 2883.81 toks/s, output: 799.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  36%|███▌      | 92/256 [00:13<00:16, 10.21it/s, est. speed input: 2878.77 toks/s, output: 813.23 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  37%|███▋      | 94/256 [00:13<00:14, 10.91it/s, est. speed input: 2903.29 toks/s, output: 835.77 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  38%|███▊      | 96/256 [00:14<00:19,  8.41it/s, est. speed input: 2881.87 toks/s, output: 845.30 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  39%|███▊      | 99/256 [00:14<00:15, 10.31it/s, est. speed input: 2957.40 toks/s, output: 882.55 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  39%|███▉      | 101/256 [00:14<00:13, 11.65it/s, est. speed input: 2993.91 toks/s, output: 908.50 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  40%|████      | 103/256 [00:14<00:14, 10.29it/s, est. speed input: 2998.95 toks/s, output: 925.42 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  41%|████      | 105/256 [00:14<00:12, 11.74it/s, est. speed input: 3052.01 toks/s, output: 951.59 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  42%|████▏     | 107/256 [00:14<00:15,  9.36it/s, est. speed input: 3045.35 toks/s, output: 964.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  43%|████▎     | 109/256 [00:15<00:18,  8.17it/s, est. speed input: 3040.32 toks/s, output: 978.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  44%|████▍     | 112/256 [00:15<00:12, 11.22it/s, est. speed input: 3129.72 toks/s, output: 1022.56 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  45%|████▍     | 114/256 [00:15<00:11, 11.88it/s, est. speed input: 3152.66 toks/s, output: 1047.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  45%|████▌     | 116/256 [00:15<00:16,  8.43it/s, est. speed input: 3131.22 toks/s, output: 1055.22 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  46%|████▌     | 118/256 [00:16<00:17,  8.05it/s, est. speed input: 3145.92 toks/s, output: 1072.81 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  47%|████▋     | 120/256 [00:16<00:15,  8.81it/s, est. speed input: 3171.70 toks/s, output: 1097.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  48%|████▊     | 122/256 [00:16<00:14,  9.06it/s, est. speed input: 3199.00 toks/s, output: 1119.32 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  49%|████▉     | 125/256 [00:17<00:16,  7.76it/s, est. speed input: 3178.96 toks/s, output: 1141.85 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  49%|████▉     | 126/256 [00:17<00:16,  8.02it/s, est. speed input: 3183.50 toks/s, output: 1153.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  50%|████▉     | 127/256 [00:17<00:23,  5.51it/s, est. speed input: 3128.07 toks/s, output: 1143.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  50%|█████     | 128/256 [00:17<00:23,  5.38it/s, est. speed input: 3114.35 toks/s, output: 1149.41 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  52%|█████▏    | 132/256 [00:17<00:12,  9.86it/s, est. speed input: 3193.22 toks/s, output: 1217.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  52%|█████▏    | 134/256 [00:18<00:12,  9.45it/s, est. speed input: 3208.05 toks/s, output: 1239.37 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  53%|█████▎    | 136/256 [00:18<00:12,  9.54it/s, est. speed input: 3218.76 toks/s, output: 1264.07 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  54%|█████▍    | 138/256 [00:18<00:16,  7.10it/s, est. speed input: 3186.63 toks/s, output: 1272.21 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  54%|█████▍    | 139/256 [00:19<00:21,  5.40it/s, est. speed input: 3140.67 toks/s, output: 1265.73 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  55%|█████▌    | 141/256 [00:19<00:17,  6.53it/s, est. speed input: 3160.14 toks/s, output: 1294.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  55%|█████▌    | 142/256 [00:19<00:16,  6.86it/s, est. speed input: 3163.63 toks/s, output: 1306.99 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  56%|█████▌    | 143/256 [00:20<00:26,  4.23it/s, est. speed input: 3093.26 toks/s, output: 1289.85 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 145/256 [00:20<00:21,  5.27it/s, est. speed input: 3103.53 toks/s, output: 1315.51 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 146/256 [00:20<00:19,  5.77it/s, est. speed input: 3110.03 toks/s, output: 1328.53 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 147/256 [00:20<00:18,  5.83it/s, est. speed input: 3104.63 toks/s, output: 1338.22 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  58%|█████▊    | 148/256 [00:20<00:19,  5.43it/s, est. speed input: 3091.22 toks/s, output: 1344.53 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  59%|█████▉    | 151/256 [00:21<00:12,  8.57it/s, est. speed input: 3138.20 toks/s, output: 1395.78 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  60%|█████▉    | 153/256 [00:21<00:12,  7.94it/s, est. speed input: 3143.30 toks/s, output: 1418.15 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████    | 156/256 [00:21<00:13,  7.23it/s, est. speed input: 3129.73 toks/s, output: 1450.07 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████▏   | 157/256 [00:22<00:17,  5.72it/s, est. speed input: 3099.84 toks/s, output: 1448.05 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▏   | 158/256 [00:22<00:17,  5.54it/s, est. speed input: 3094.13 toks/s, output: 1456.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▏   | 159/256 [00:22<00:16,  5.90it/s, est. speed input: 3094.41 toks/s, output: 1469.93 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  63%|██████▎   | 161/256 [00:22<00:14,  6.33it/s, est. speed input: 3091.33 toks/s, output: 1495.64 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▎   | 163/256 [00:23<00:15,  6.10it/s, est. speed input: 3083.25 toks/s, output: 1517.04 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▍   | 165/256 [00:23<00:12,  7.46it/s, est. speed input: 3100.61 toks/s, output: 1551.89 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▌   | 168/256 [00:23<00:08, 10.49it/s, est. speed input: 3141.82 toks/s, output: 1610.97 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▋   | 170/256 [00:23<00:09,  8.86it/s, est. speed input: 3134.48 toks/s, output: 1634.65 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  67%|██████▋   | 172/256 [00:23<00:08, 10.24it/s, est. speed input: 3155.25 toks/s, output: 1671.99 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  68%|██████▊   | 175/256 [00:23<00:06, 11.83it/s, est. speed input: 3184.08 toks/s, output: 1727.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  69%|██████▉   | 177/256 [00:24<00:06, 11.93it/s, est. speed input: 3198.06 toks/s, output: 1761.89 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|██████▉   | 179/256 [00:24<00:09,  8.48it/s, est. speed input: 3184.34 toks/s, output: 1778.74 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████   | 181/256 [00:24<00:10,  7.00it/s, est. speed input: 3171.40 toks/s, output: 1796.56 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████   | 182/256 [00:25<00:10,  7.05it/s, est. speed input: 3177.96 toks/s, output: 1810.74 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  72%|███████▏  | 184/256 [00:25<00:08,  8.49it/s, est. speed input: 3195.42 toks/s, output: 1848.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  73%|███████▎  | 186/256 [00:25<00:07,  9.09it/s, est. speed input: 3202.91 toks/s, output: 1883.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  74%|███████▍  | 189/256 [00:25<00:06, 11.14it/s, est. speed input: 3230.00 toks/s, output: 1942.79 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▍  | 191/256 [00:25<00:06, 10.80it/s, est. speed input: 3235.45 toks/s, output: 1976.42 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▌  | 193/256 [00:26<00:10,  6.10it/s, est. speed input: 3181.05 toks/s, output: 1974.13 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  76%|███████▌  | 195/256 [00:27<00:11,  5.14it/s, est. speed input: 3146.51 toks/s, output: 1984.97 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  77%|███████▋  | 198/256 [00:27<00:07,  7.38it/s, est. speed input: 3175.86 toks/s, output: 2053.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  78%|███████▊  | 200/256 [00:28<00:12,  4.44it/s, est. speed input: 3106.58 toks/s, output: 2036.48 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  79%|███████▊  | 201/256 [00:28<00:12,  4.44it/s, est. speed input: 3096.42 toks/s, output: 2047.20 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  79%|███████▉  | 202/256 [00:28<00:13,  3.91it/s, est. speed input: 3075.15 toks/s, output: 2046.59 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  80%|███████▉  | 204/256 [00:29<00:15,  3.45it/s, est. speed input: 3027.78 toks/s, output: 2052.02 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  81%|████████  | 207/256 [00:29<00:09,  5.31it/s, est. speed input: 3056.54 toks/s, output: 2124.79 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  81%|████████▏ | 208/256 [00:29<00:09,  4.93it/s, est. speed input: 3041.21 toks/s, output: 2133.57 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  82%|████████▏ | 209/256 [00:30<00:10,  4.62it/s, est. speed input: 3026.74 toks/s, output: 2142.90 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  82%|████████▏ | 210/256 [00:30<00:09,  4.77it/s, est. speed input: 3022.39 toks/s, output: 2158.60 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  83%|████████▎ | 212/256 [00:30<00:08,  5.45it/s, est. speed input: 3021.35 toks/s, output: 2196.41 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▎ | 214/256 [00:30<00:06,  6.07it/s, est. speed input: 3029.80 toks/s, output: 2236.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▍ | 216/256 [00:31<00:05,  7.18it/s, est. speed input: 3039.76 toks/s, output: 2282.06 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  85%|████████▍ | 217/256 [00:31<00:05,  6.55it/s, est. speed input: 3032.56 toks/s, output: 2296.62 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  85%|████████▌ | 218/256 [00:31<00:08,  4.56it/s, est. speed input: 3001.07 toks/s, output: 2293.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▌ | 220/256 [00:32<00:10,  3.43it/s, est. speed input: 2954.68 toks/s, output: 2296.62 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▋ | 221/256 [00:32<00:09,  3.72it/s, est. speed input: 2952.48 toks/s, output: 2314.76 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 222/256 [00:33<00:10,  3.30it/s, est. speed input: 2927.66 toks/s, output: 2317.41 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 223/256 [00:33<00:08,  3.87it/s, est. speed input: 2931.27 toks/s, output: 2340.60 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 224/256 [00:33<00:09,  3.40it/s, est. speed input: 2908.28 toks/s, output: 2345.25 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 225/256 [00:33<00:08,  3.85it/s, est. speed input: 2908.01 toks/s, output: 2365.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 226/256 [00:34<00:10,  2.90it/s, est. speed input: 2877.97 toks/s, output: 2360.26 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▊ | 227/256 [00:34<00:08,  3.51it/s, est. speed input: 2879.83 toks/s, output: 2384.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▉ | 228/256 [00:35<00:10,  2.64it/s, est. speed input: 2841.06 toks/s, output: 2376.30 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▉ | 229/256 [00:35<00:08,  3.30it/s, est. speed input: 2842.29 toks/s, output: 2402.03 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  90%|████████▉ | 230/256 [00:35<00:10,  2.40it/s, est. speed input: 2799.11 toks/s, output: 2390.43 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  90%|█████████ | 231/256 [00:37<00:21,  1.18it/s, est. speed input: 2671.55 toks/s, output: 2307.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████ | 232/256 [00:38<00:22,  1.06it/s, est. speed input: 2602.15 toks/s, output: 2276.19 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████ | 233/256 [00:39<00:21,  1.08it/s, est. speed input: 2555.86 toks/s, output: 2263.55 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████▏| 234/256 [00:40<00:18,  1.18it/s, est. speed input: 2523.77 toks/s, output: 2264.62 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  92%|█████████▏| 235/256 [00:41<00:21,  1.03s/it, est. speed input: 2446.91 toks/s, output: 2225.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  92%|█████████▏| 236/256 [00:42<00:16,  1.19it/s, est. speed input: 2433.94 toks/s, output: 2244.99 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  93%|█████████▎| 238/256 [00:43<00:14,  1.24it/s, est. speed input: 2367.01 toks/s, output: 2245.29 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  93%|█████████▎| 239/256 [00:46<00:21,  1.29s/it, est. speed input: 2237.72 toks/s, output: 2156.25 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  94%|█████████▍| 240/256 [00:46<00:15,  1.02it/s, est. speed input: 2240.67 toks/s, output: 2194.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  94%|█████████▍| 241/256 [00:48<00:15,  1.05s/it, est. speed input: 2191.74 toks/s, output: 2181.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  95%|█████████▍| 242/256 [00:51<00:22,  1.60s/it, est. speed input: 2071.62 toks/s, output: 2098.68 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  95%|█████████▍| 243/256 [00:51<00:15,  1.18s/it, est. speed input: 2074.15 toks/s, output: 2139.68 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  95%|█████████▌| 244/256 [00:54<00:22,  1.87s/it, est. speed input: 1946.74 toks/s, output: 2049.37 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▌| 245/256 [00:55<00:16,  1.46s/it, est. speed input: 1937.94 toks/s, output: 2080.63 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▌| 246/256 [00:55<00:11,  1.17s/it, est. speed input: 1931.54 toks/s, output: 2111.23 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▋| 247/256 [00:57<00:13,  1.52s/it, est. speed input: 1861.11 toks/s, output: 2076.53 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  97%|█████████▋| 248/256 [00:59<00:11,  1.48s/it, est. speed input: 1825.15 toks/s, output: 2078.89 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  97%|█████████▋| 249/256 [00:59<00:07,  1.12s/it, est. speed input: 1823.42 toks/s, output: 2120.92 toks/s]
+Processed prompts: 100%|██████████| 256/256 [00:59<00:00,  4.29it/s, est. speed input: 1871.79 toks/s, output: 2478.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 0/256 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 1/256 [00:06<28:05,  6.61s/it, est. speed input: 56.60 toks/s, output: 6.51 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   1%|          | 2/256 [00:06<11:46,  2.78s/it, est. speed input: 120.89 toks/s, output: 13.12 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   1%|          | 3/256 [00:06<06:39,  1.58s/it, est. speed input: 271.87 toks/s, output: 19.83 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 6/256 [00:07<02:30,  1.67it/s, est. speed input: 427.52 toks/s, output: 39.94 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   3%|▎         | 7/256 [00:07<02:02,  2.03it/s, est. speed input: 469.93 toks/s, output: 46.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   4%|▎         | 9/256 [00:07<01:19,  3.10it/s, est. speed input: 664.28 toks/s, output: 61.94 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   4%|▍         | 11/256 [00:07<00:58,  4.16it/s, est. speed input: 746.71 toks/s, output: 76.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   6%|▌         | 15/256 [00:07<00:35,  6.71it/s, est. speed input: 1050.61 toks/s, output: 107.79 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   7%|▋         | 17/256 [00:08<00:32,  7.39it/s, est. speed input: 1122.49 toks/s, output: 123.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   9%|▊         | 22/256 [00:08<00:21, 10.77it/s, est. speed input: 1323.87 toks/s, output: 164.46 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   9%|▉         | 24/256 [00:08<00:22, 10.11it/s, est. speed input: 1383.86 toks/s, output: 179.05 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  10%|█         | 26/256 [00:08<00:22, 10.18it/s, est. speed input: 1442.30 toks/s, output: 194.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  11%|█▏        | 29/256 [00:08<00:19, 11.55it/s, est. speed input: 1542.70 toks/s, output: 220.26 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  12%|█▎        | 32/256 [00:09<00:18, 11.89it/s, est. speed input: 1627.11 toks/s, output: 245.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  13%|█▎        | 34/256 [00:09<00:25,  8.73it/s, est. speed input: 1635.11 toks/s, output: 255.88 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  14%|█▍        | 36/256 [00:09<00:26,  8.25it/s, est. speed input: 1669.48 toks/s, output: 270.70 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  16%|█▌        | 41/256 [00:10<00:16, 13.01it/s, est. speed input: 1843.31 toks/s, output: 323.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  17%|█▋        | 43/256 [00:10<00:15, 13.38it/s, est. speed input: 1961.46 toks/s, output: 341.72 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  18%|█▊        | 47/256 [00:10<00:13, 15.85it/s, est. speed input: 2084.93 toks/s, output: 381.77 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  20%|█▉        | 50/256 [00:10<00:15, 13.48it/s, est. speed input: 2172.29 toks/s, output: 405.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  21%|██        | 53/256 [00:10<00:14, 14.41it/s, est. speed input: 2253.27 toks/s, output: 435.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  22%|██▏       | 56/256 [00:10<00:12, 16.24it/s, est. speed input: 2340.30 toks/s, output: 466.98 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  23%|██▎       | 59/256 [00:11<00:12, 15.57it/s, est. speed input: 2436.71 toks/s, output: 495.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  24%|██▍       | 61/256 [00:11<00:12, 15.62it/s, est. speed input: 2479.29 toks/s, output: 514.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  25%|██▌       | 64/256 [00:11<00:10, 17.53it/s, est. speed input: 2585.61 toks/s, output: 547.20 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  26%|██▌       | 67/256 [00:11<00:09, 19.20it/s, est. speed input: 2713.87 toks/s, output: 579.68 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  27%|██▋       | 70/256 [00:11<00:11, 16.39it/s, est. speed input: 2789.37 toks/s, output: 606.65 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  29%|██▊       | 73/256 [00:11<00:11, 15.92it/s, est. speed input: 2931.42 toks/s, output: 635.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  29%|██▉       | 75/256 [00:12<00:11, 16.09it/s, est. speed input: 2999.51 toks/s, output: 656.38 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  30%|███       | 77/256 [00:12<00:15, 11.66it/s, est. speed input: 2985.63 toks/s, output: 667.04 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  32%|███▏      | 82/256 [00:12<00:11, 15.60it/s, est. speed input: 3147.44 toks/s, output: 725.15 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  33%|███▎      | 85/256 [00:12<00:09, 17.57it/s, est. speed input: 3212.12 toks/s, output: 760.32 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  34%|███▍      | 88/256 [00:12<00:10, 15.97it/s, est. speed input: 3268.22 toks/s, output: 788.83 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  36%|███▌      | 91/256 [00:13<00:09, 16.90it/s, est. speed input: 3324.67 toks/s, output: 822.41 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  36%|███▋      | 93/256 [00:13<00:10, 14.95it/s, est. speed input: 3358.86 toks/s, output: 839.56 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  37%|███▋      | 95/256 [00:13<00:14, 10.97it/s, est. speed input: 3381.68 toks/s, output: 847.91 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  38%|███▊      | 97/256 [00:13<00:14, 10.93it/s, est. speed input: 3397.74 toks/s, output: 866.34 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  39%|███▊      | 99/256 [00:14<00:14, 10.92it/s, est. speed input: 3408.36 toks/s, output: 885.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  39%|███▉      | 101/256 [00:14<00:13, 11.57it/s, est. speed input: 3473.73 toks/s, output: 906.48 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  40%|████      | 103/256 [00:14<00:14, 10.23it/s, est. speed input: 3498.09 toks/s, output: 921.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  41%|████      | 105/256 [00:14<00:14, 10.46it/s, est. speed input: 3528.18 toks/s, output: 941.11 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  42%|████▏     | 107/256 [00:14<00:13, 11.27it/s, est. speed input: 3545.61 toks/s, output: 963.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  43%|████▎     | 110/256 [00:14<00:09, 14.62it/s, est. speed input: 3626.29 toks/s, output: 1003.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  44%|████▍     | 113/256 [00:14<00:08, 17.66it/s, est. speed input: 3724.76 toks/s, output: 1044.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  45%|████▌     | 116/256 [00:15<00:09, 15.40it/s, est. speed input: 3805.38 toks/s, output: 1075.83 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  46%|████▌     | 118/256 [00:15<00:09, 14.27it/s, est. speed input: 3857.80 toks/s, output: 1096.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  47%|████▋     | 120/256 [00:15<00:12, 10.89it/s, est. speed input: 3849.76 toks/s, output: 1107.56 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  48%|████▊     | 122/256 [00:15<00:10, 12.36it/s, est. speed input: 3878.99 toks/s, output: 1133.56 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  48%|████▊     | 124/256 [00:15<00:11, 11.54it/s, est. speed input: 3884.45 toks/s, output: 1152.43 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  49%|████▉     | 126/256 [00:16<00:13,  9.97it/s, est. speed input: 3902.81 toks/s, output: 1167.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  50%|█████     | 128/256 [00:16<00:11, 11.01it/s, est. speed input: 3922.20 toks/s, output: 1191.74 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  51%|█████     | 130/256 [00:16<00:15,  7.90it/s, est. speed input: 3873.51 toks/s, output: 1195.13 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  52%|█████▏    | 132/256 [00:16<00:13,  9.36it/s, est. speed input: 3915.77 toks/s, output: 1220.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  53%|█████▎    | 136/256 [00:17<00:09, 12.35it/s, est. speed input: 4007.15 toks/s, output: 1273.81 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  54%|█████▍    | 138/256 [00:17<00:11, 10.42it/s, est. speed input: 3988.55 toks/s, output: 1287.48 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  55%|█████▍    | 140/256 [00:17<00:14,  7.93it/s, est. speed input: 4012.12 toks/s, output: 1292.48 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  56%|█████▋    | 144/256 [00:17<00:09, 11.48it/s, est. speed input: 4110.63 toks/s, output: 1354.07 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 146/256 [00:18<00:11,  9.25it/s, est. speed input: 4077.32 toks/s, output: 1364.43 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  58%|█████▊    | 149/256 [00:18<00:10,  9.83it/s, est. speed input: 4104.86 toks/s, output: 1400.06 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  59%|█████▉    | 151/256 [00:18<00:09, 11.13it/s, est. speed input: 4174.04 toks/s, output: 1429.58 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  60%|█████▉    | 153/256 [00:19<00:11,  8.84it/s, est. speed input: 4138.92 toks/s, output: 1440.12 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████    | 155/256 [00:19<00:10,  9.66it/s, est. speed input: 4168.62 toks/s, output: 1467.15 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████▏   | 157/256 [00:19<00:12,  8.06it/s, est. speed input: 4170.95 toks/s, output: 1479.68 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▏   | 159/256 [00:20<00:15,  6.23it/s, est. speed input: 4105.08 toks/s, output: 1482.21 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▎   | 160/256 [00:20<00:16,  5.84it/s, est. speed input: 4079.22 toks/s, output: 1486.14 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▎   | 163/256 [00:20<00:11,  8.08it/s, est. speed input: 4129.74 toks/s, output: 1534.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▍   | 165/256 [00:21<00:17,  5.27it/s, est. speed input: 4030.70 toks/s, output: 1525.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▌   | 168/256 [00:21<00:12,  7.19it/s, est. speed input: 4053.37 toks/s, output: 1577.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▋   | 170/256 [00:21<00:10,  8.04it/s, est. speed input: 4057.36 toks/s, output: 1607.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  67%|██████▋   | 172/256 [00:21<00:09,  8.61it/s, est. speed input: 4075.55 toks/s, output: 1637.24 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  68%|██████▊   | 175/256 [00:21<00:08,  9.82it/s, est. speed input: 4103.96 toks/s, output: 1685.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  69%|██████▉   | 177/256 [00:22<00:10,  7.23it/s, est. speed input: 4067.40 toks/s, output: 1693.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|██████▉   | 178/256 [00:22<00:10,  7.43it/s, est. speed input: 4064.46 toks/s, output: 1706.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|██████▉   | 179/256 [00:22<00:11,  6.60it/s, est. speed input: 4044.40 toks/s, output: 1712.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|███████   | 180/256 [00:23<00:13,  5.53it/s, est. speed input: 4010.37 toks/s, output: 1713.93 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████   | 181/256 [00:24<00:29,  2.56it/s, est. speed input: 3844.83 toks/s, output: 1659.91 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████   | 182/256 [00:24<00:25,  2.95it/s, est. speed input: 3831.63 toks/s, output: 1671.81 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  72%|███████▏  | 185/256 [00:24<00:15,  4.73it/s, est. speed input: 3845.37 toks/s, output: 1725.60 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  73%|███████▎  | 187/256 [00:24<00:13,  5.27it/s, est. speed input: 3831.23 toks/s, output: 1754.12 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  74%|███████▍  | 190/256 [00:25<00:11,  5.60it/s, est. speed input: 3815.71 toks/s, output: 1793.80 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▍  | 191/256 [00:25<00:14,  4.43it/s, est. speed input: 3761.48 toks/s, output: 1786.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▌  | 192/256 [00:26<00:14,  4.45it/s, est. speed input: 3743.90 toks/s, output: 1797.41 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  76%|███████▌  | 194/256 [00:26<00:11,  5.23it/s, est. speed input: 3738.76 toks/s, output: 1830.81 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  76%|███████▌  | 195/256 [00:27<00:19,  3.20it/s, est. speed input: 3644.07 toks/s, output: 1803.71 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  77%|███████▋  | 196/256 [00:27<00:19,  3.14it/s, est. speed input: 3612.79 toks/s, output: 1808.36 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  77%|███████▋  | 198/256 [00:27<00:12,  4.53it/s, est. speed input: 3624.54 toks/s, output: 1853.05 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  78%|███████▊  | 199/256 [00:27<00:11,  4.94it/s, est. speed input: 3621.30 toks/s, output: 1871.04 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  78%|███████▊  | 200/256 [00:28<00:12,  4.58it/s, est. speed input: 3599.85 toks/s, output: 1880.33 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  79%|███████▉  | 202/256 [00:28<00:13,  4.07it/s, est. speed input: 3555.52 toks/s, output: 1897.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  79%|███████▉  | 203/256 [00:28<00:14,  3.76it/s, est. speed input: 3529.22 toks/s, output: 1903.22 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  80%|███████▉  | 204/256 [00:29<00:16,  3.11it/s, est. speed input: 3485.71 toks/s, output: 1899.82 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  80%|████████  | 206/256 [00:29<00:11,  4.27it/s, est. speed input: 3487.92 toks/s, output: 1943.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  81%|████████  | 207/256 [00:29<00:10,  4.88it/s, est. speed input: 3489.18 toks/s, output: 1965.43 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  82%|████████▏ | 210/256 [00:30<00:06,  6.74it/s, est. speed input: 3499.90 toks/s, output: 2034.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  82%|████████▏ | 211/256 [00:30<00:07,  5.97it/s, est. speed input: 3485.46 toks/s, output: 2047.17 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  83%|████████▎ | 213/256 [00:30<00:08,  5.05it/s, est. speed input: 3461.69 toks/s, output: 2072.29 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▎ | 214/256 [00:30<00:08,  5.06it/s, est. speed input: 3453.10 toks/s, output: 2089.39 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▍ | 215/256 [00:31<00:07,  5.60it/s, est. speed input: 3455.55 toks/s, output: 2112.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▍ | 216/256 [00:31<00:07,  5.27it/s, est. speed input: 3444.76 toks/s, output: 2127.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  85%|████████▍ | 217/256 [00:31<00:07,  5.49it/s, est. speed input: 3440.15 toks/s, output: 2147.26 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  85%|████████▌ | 218/256 [00:31<00:08,  4.25it/s, est. speed input: 3413.05 toks/s, output: 2152.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▌ | 219/256 [00:32<00:08,  4.41it/s, est. speed input: 3402.77 toks/s, output: 2170.18 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▋ | 221/256 [00:32<00:07,  4.43it/s, est. speed input: 3378.90 toks/s, output: 2202.83 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 222/256 [00:32<00:08,  3.79it/s, est. speed input: 3351.84 toks/s, output: 2209.20 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 223/256 [00:34<00:16,  2.02it/s, est. speed input: 3248.36 toks/s, output: 2166.35 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 224/256 [00:34<00:15,  2.08it/s, est. speed input: 3218.56 toks/s, output: 2172.50 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 225/256 [00:34<00:12,  2.43it/s, est. speed input: 3207.82 toks/s, output: 2191.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 226/256 [00:35<00:11,  2.57it/s, est. speed input: 3187.82 toks/s, output: 2205.29 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▊ | 227/256 [00:35<00:09,  3.00it/s, est. speed input: 3180.78 toks/s, output: 2227.46 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▉ | 228/256 [00:35<00:09,  3.10it/s, est. speed input: 3165.37 toks/s, output: 2243.48 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  90%|████████▉ | 230/256 [00:35<00:06,  4.18it/s, est. speed input: 3162.53 toks/s, output: 2295.44 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  90%|█████████ | 231/256 [00:36<00:07,  3.17it/s, est. speed input: 3125.81 toks/s, output: 2296.27 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████ | 232/256 [00:36<00:07,  3.37it/s, est. speed input: 3115.02 toks/s, output: 2316.60 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████ | 233/256 [00:37<00:09,  2.51it/s, est. speed input: 3069.34 toks/s, output: 2311.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  91%|█████████▏| 234/256 [00:37<00:08,  2.51it/s, est. speed input: 3054.80 toks/s, output: 2323.42 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  92%|█████████▏| 235/256 [00:38<00:08,  2.59it/s, est. speed input: 3038.72 toks/s, output: 2338.93 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  92%|█████████▏| 236/256 [00:38<00:06,  3.01it/s, est. speed input: 3033.10 toks/s, output: 2363.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  93%|█████████▎| 237/256 [00:39<00:12,  1.52it/s, est. speed input: 2932.64 toks/s, output: 2316.16 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  93%|█████████▎| 238/256 [00:39<00:09,  1.90it/s, est. speed input: 2927.07 toks/s, output: 2342.75 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  94%|█████████▍| 240/256 [00:41<00:09,  1.67it/s, est. speed input: 2848.33 toks/s, output: 2342.50 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  94%|█████████▍| 241/256 [00:42<00:10,  1.48it/s, est. speed input: 2796.39 toks/s, output: 2332.81 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  95%|█████████▍| 242/256 [00:42<00:07,  1.89it/s, est. speed input: 2798.56 toks/s, output: 2367.83 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  95%|█████████▍| 243/256 [00:42<00:06,  2.15it/s, est. speed input: 2789.81 toks/s, output: 2393.13 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▌| 245/256 [00:45<00:08,  1.25it/s, est. speed input: 2656.56 toks/s, output: 2345.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  96%|█████████▋| 247/256 [00:49<00:12,  1.40s/it, est. speed input: 2420.21 toks/s, output: 2209.15 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  97%|█████████▋| 248/256 [00:50<00:10,  1.25s/it, est. speed input: 2394.96 toks/s, output: 2226.98 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  97%|█████████▋| 249/256 [00:53<00:11,  1.57s/it, est. speed input: 2284.61 toks/s, output: 2167.89 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  98%|█████████▊| 250/256 [00:54<00:09,  1.56s/it, est. speed input: 2228.33 toks/s, output: 2158.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  98%|█████████▊| 251/256 [00:54<00:06,  1.23s/it, est. speed input: 2223.40 toks/s, output: 2199.05 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  98%|█████████▊| 252/256 [00:57<00:06,  1.54s/it, est. speed input: 2139.22 toks/s, output: 2162.31 toks/s]
+Processed prompts: 100%|██████████| 256/256 [00:57<00:00,  4.47it/s, est. speed input: 2168.86 toks/s, output: 2376.73 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 0/256 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   0%|          | 1/256 [00:04<19:21,  4.56s/it, est. speed input: 91.54 toks/s, output: 3.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   1%|          | 2/256 [00:05<10:31,  2.49s/it, est. speed input: 151.39 toks/s, output: 10.19 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 4/256 [00:05<04:09,  1.01it/s, est. speed input: 293.28 toks/s, output: 24.17 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 5/256 [00:05<03:03,  1.37it/s, est. speed input: 351.77 toks/s, output: 31.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   2%|▏         | 6/256 [00:06<02:36,  1.60it/s, est. speed input: 390.47 toks/s, output: 37.88 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   3%|▎         | 7/256 [00:06<02:10,  1.90it/s, est. speed input: 437.92 toks/s, output: 45.24 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   4%|▍         | 11/256 [00:06<00:54,  4.48it/s, est. speed input: 654.63 toks/s, output: 80.25 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   6%|▌         | 15/256 [00:07<00:38,  6.34it/s, est. speed input: 857.13 toks/s, output: 113.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   7%|▋         | 17/256 [00:07<00:34,  7.02it/s, est. speed input: 952.35 toks/s, output: 130.89 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   7%|▋         | 19/256 [00:07<00:30,  7.68it/s, est. speed input: 1030.26 toks/s, output: 147.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   8%|▊         | 21/256 [00:07<00:36,  6.50it/s, est. speed input: 1071.65 toks/s, output: 160.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:   9%|▉         | 23/256 [00:08<00:32,  7.28it/s, est. speed input: 1137.70 toks/s, output: 179.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  11%|█         | 27/256 [00:08<00:21, 10.86it/s, est. speed input: 1306.85 toks/s, output: 221.27 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  12%|█▏        | 31/256 [00:08<00:15, 14.27it/s, est. speed input: 1468.66 toks/s, output: 263.50 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  15%|█▍        | 38/256 [00:08<00:09, 22.01it/s, est. speed input: 1773.85 toks/s, output: 339.92 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  16%|█▌        | 41/256 [00:08<00:09, 21.92it/s, est. speed input: 1883.25 toks/s, output: 370.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  17%|█▋        | 44/256 [00:08<00:09, 22.15it/s, est. speed input: 1985.43 toks/s, output: 400.22 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  19%|█▉        | 48/256 [00:09<00:08, 24.33it/s, est. speed input: 2137.66 toks/s, output: 442.94 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  20%|█▉        | 51/256 [00:09<00:10, 19.04it/s, est. speed input: 2200.75 toks/s, output: 467.56 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  21%|██▏       | 55/256 [00:09<00:11, 17.86it/s, est. speed input: 2306.19 toks/s, output: 504.65 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  23%|██▎       | 58/256 [00:09<00:11, 16.79it/s, est. speed input: 2383.04 toks/s, output: 532.25 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  24%|██▍       | 61/256 [00:09<00:10, 18.27it/s, est. speed input: 2472.06 toks/s, output: 564.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  27%|██▋       | 69/256 [00:09<00:06, 28.77it/s, est. speed input: 2759.41 toks/s, output: 662.86 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  29%|██▊       | 73/256 [00:10<00:07, 25.81it/s, est. speed input: 2860.03 toks/s, output: 703.36 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  30%|██▉       | 76/256 [00:10<00:08, 22.35it/s, est. speed input: 2920.98 toks/s, output: 730.97 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  31%|███       | 79/256 [00:10<00:07, 23.05it/s, est. speed input: 3001.36 toks/s, output: 764.16 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  32%|███▏      | 83/256 [00:10<00:06, 25.68it/s, est. speed input: 3117.61 toks/s, output: 811.37 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  34%|███▎      | 86/256 [00:10<00:07, 22.12it/s, est. speed input: 3172.62 toks/s, output: 839.39 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  36%|███▌      | 92/256 [00:10<00:05, 29.18it/s, est. speed input: 3355.99 toks/s, output: 916.09 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  38%|███▊      | 96/256 [00:11<00:05, 30.81it/s, est. speed input: 3471.97 toks/s, output: 964.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  39%|███▉      | 101/256 [00:11<00:06, 23.11it/s, est. speed input: 3552.54 toks/s, output: 1008.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  41%|████      | 105/256 [00:11<00:05, 25.86it/s, est. speed input: 3663.90 toks/s, output: 1058.98 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  43%|████▎     | 109/256 [00:11<00:07, 19.95it/s, est. speed input: 3702.19 toks/s, output: 1090.63 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  45%|████▍     | 114/256 [00:12<00:07, 19.30it/s, est. speed input: 3774.65 toks/s, output: 1142.06 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  46%|████▌     | 117/256 [00:12<00:07, 18.88it/s, est. speed input: 3816.72 toks/s, output: 1173.40 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  47%|████▋     | 120/256 [00:12<00:10, 13.23it/s, est. speed input: 3785.40 toks/s, output: 1180.29 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  48%|████▊     | 122/256 [00:12<00:09, 13.51it/s, est. speed input: 3807.31 toks/s, output: 1200.73 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  48%|████▊     | 124/256 [00:13<00:10, 12.04it/s, est. speed input: 3798.41 toks/s, output: 1212.69 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  49%|████▉     | 126/256 [00:13<00:09, 13.26it/s, est. speed input: 3830.93 toks/s, output: 1236.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  50%|█████     | 128/256 [00:13<00:12, 10.23it/s, est. speed input: 3800.21 toks/s, output: 1240.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  51%|█████     | 130/256 [00:13<00:11, 10.98it/s, est. speed input: 3826.95 toks/s, output: 1261.60 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  52%|█████▏    | 133/256 [00:13<00:10, 11.63it/s, est. speed input: 3851.66 toks/s, output: 1292.78 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  53%|█████▎    | 135/256 [00:14<00:13,  9.29it/s, est. speed input: 3812.95 toks/s, output: 1297.50 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  54%|█████▍    | 139/256 [00:14<00:10, 11.63it/s, est. speed input: 3862.61 toks/s, output: 1349.16 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  55%|█████▌    | 141/256 [00:14<00:12,  9.54it/s, est. speed input: 3831.82 toks/s, output: 1355.28 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  56%|█████▌    | 143/256 [00:15<00:18,  6.23it/s, est. speed input: 3721.02 toks/s, output: 1333.93 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 145/256 [00:15<00:15,  7.14it/s, est. speed input: 3736.06 toks/s, output: 1356.77 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 146/256 [00:15<00:14,  7.40it/s, est. speed input: 3733.40 toks/s, output: 1366.13 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  57%|█████▋    | 147/256 [00:15<00:14,  7.69it/s, est. speed input: 3734.72 toks/s, output: 1375.70 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  58%|█████▊    | 148/256 [00:16<00:17,  6.30it/s, est. speed input: 3696.68 toks/s, output: 1371.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  58%|█████▊    | 149/256 [00:16<00:20,  5.15it/s, est. speed input: 3649.07 toks/s, output: 1365.19 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  59%|█████▊    | 150/256 [00:16<00:18,  5.60it/s, est. speed input: 3643.29 toks/s, output: 1374.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  59%|█████▉    | 152/256 [00:16<00:13,  7.60it/s, est. speed input: 3665.47 toks/s, output: 1402.84 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  60%|█████▉    | 153/256 [00:16<00:18,  5.46it/s, est. speed input: 3610.74 toks/s, output: 1393.51 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████    | 155/256 [00:17<00:16,  6.02it/s, est. speed input: 3599.65 toks/s, output: 1411.44 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████    | 156/256 [00:17<00:24,  4.06it/s, est. speed input: 3513.65 toks/s, output: 1390.44 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  61%|██████▏   | 157/256 [00:18<00:30,  3.25it/s, est. speed input: 3440.10 toks/s, output: 1373.80 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▏   | 158/256 [00:18<00:34,  2.85it/s, est. speed input: 3372.81 toks/s, output: 1360.91 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  62%|██████▎   | 160/256 [00:18<00:23,  4.07it/s, est. speed input: 3381.32 toks/s, output: 1390.73 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  63%|██████▎   | 161/256 [00:19<00:23,  3.96it/s, est. speed input: 3353.00 toks/s, output: 1393.49 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  63%|██████▎   | 162/256 [00:19<00:23,  4.08it/s, est. speed input: 3336.37 toks/s, output: 1400.31 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▎   | 163/256 [00:19<00:21,  4.30it/s, est. speed input: 3322.24 toks/s, output: 1409.17 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  64%|██████▍   | 165/256 [00:19<00:15,  5.89it/s, est. speed input: 3334.17 toks/s, output: 1442.91 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  65%|██████▍   | 166/256 [00:20<00:18,  4.90it/s, est. speed input: 3300.93 toks/s, output: 1443.66 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▌   | 168/256 [00:20<00:14,  6.20it/s, est. speed input: 3310.70 toks/s, output: 1476.77 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▌   | 169/256 [00:20<00:21,  4.04it/s, est. speed input: 3243.63 toks/s, output: 1461.99 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  66%|██████▋   | 170/256 [00:21<00:33,  2.57it/s, est. speed input: 3136.69 toks/s, output: 1430.49 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  67%|██████▋   | 172/256 [00:21<00:22,  3.71it/s, est. speed input: 3146.30 toks/s, output: 1467.47 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  68%|██████▊   | 173/256 [00:22<00:22,  3.66it/s, est. speed input: 3122.32 toks/s, output: 1473.72 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  68%|██████▊   | 175/256 [00:22<00:16,  4.92it/s, est. speed input: 3130.36 toks/s, output: 1511.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  69%|██████▉   | 176/256 [00:22<00:15,  5.28it/s, est. speed input: 3129.64 toks/s, output: 1527.45 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|██████▉   | 178/256 [00:23<00:20,  3.87it/s, est. speed input: 3065.32 toks/s, output: 1529.71 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  70%|███████   | 180/256 [00:23<00:20,  3.62it/s, est. speed input: 3021.39 toks/s, output: 1541.88 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████   | 182/256 [00:24<00:26,  2.81it/s, est. speed input: 2929.36 toks/s, output: 1530.77 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  71%|███████▏  | 183/256 [00:25<00:25,  2.90it/s, est. speed input: 2911.71 toks/s, output: 1540.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  72%|███████▏  | 185/256 [00:25<00:18,  3.93it/s, est. speed input: 2920.95 toks/s, output: 1583.53 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  73%|███████▎  | 187/256 [00:25<00:15,  4.34it/s, est. speed input: 2910.88 toks/s, output: 1615.72 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  73%|███████▎  | 188/256 [00:26<00:15,  4.27it/s, est. speed input: 2896.92 toks/s, output: 1628.01 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  74%|███████▍  | 190/256 [00:26<00:11,  5.86it/s, est. speed input: 2917.83 toks/s, output: 1676.53 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▍  | 191/256 [00:26<00:14,  4.49it/s, est. speed input: 2885.66 toks/s, output: 1677.76 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▌  | 192/256 [00:26<00:12,  4.93it/s, est. speed input: 2885.42 toks/s, output: 1697.52 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  75%|███████▌  | 193/256 [00:26<00:11,  5.45it/s, est. speed input: 2890.25 toks/s, output: 1718.06 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  76%|███████▌  | 195/256 [00:27<00:11,  5.46it/s, est. speed input: 2882.37 toks/s, output: 1751.58 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  77%|███████▋  | 197/256 [00:27<00:09,  6.11it/s, est. speed input: 2882.80 toks/s, output: 1792.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  77%|███████▋  | 198/256 [00:27<00:11,  4.99it/s, est. speed input: 2863.08 toks/s, output: 1799.26 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  78%|███████▊  | 199/256 [00:28<00:11,  4.76it/s, est. speed input: 2852.21 toks/s, output: 1812.93 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  78%|███████▊  | 200/256 [00:28<00:17,  3.16it/s, est. speed input: 2801.93 toks/s, output: 1802.08 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  79%|███████▊  | 201/256 [00:28<00:15,  3.59it/s, est. speed input: 2798.62 toks/s, output: 1821.21 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  79%|███████▉  | 202/256 [00:29<00:18,  2.98it/s, est. speed input: 2764.84 toks/s, output: 1821.03 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  80%|███████▉  | 204/256 [00:30<00:17,  2.93it/s, est. speed input: 2726.19 toks/s, output: 1839.28 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  81%|████████  | 207/256 [00:30<00:11,  4.19it/s, est. speed input: 2732.85 toks/s, output: 1908.19 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  81%|████████▏ | 208/256 [00:30<00:12,  3.97it/s, est. speed input: 2720.94 toks/s, output: 1920.33 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  82%|████████▏ | 209/256 [00:31<00:12,  3.74it/s, est. speed input: 2705.89 toks/s, output: 1931.97 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  82%|████████▏ | 211/256 [00:31<00:08,  5.03it/s, est. speed input: 2717.11 toks/s, output: 1984.95 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  83%|████████▎ | 212/256 [00:31<00:08,  5.03it/s, est. speed input: 2713.33 toks/s, output: 2004.37 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  83%|████████▎ | 213/256 [00:31<00:12,  3.44it/s, est. speed input: 2674.22 toks/s, output: 1999.67 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▎ | 214/256 [00:32<00:13,  3.15it/s, est. speed input: 2653.43 toks/s, output: 2008.20 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▍ | 215/256 [00:32<00:11,  3.55it/s, est. speed input: 2650.58 toks/s, output: 2030.10 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  84%|████████▍ | 216/256 [00:33<00:14,  2.67it/s, est. speed input: 2612.72 toks/s, output: 2025.70 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  85%|████████▍ | 217/256 [00:33<00:16,  2.33it/s, est. speed input: 2580.95 toks/s, output: 2025.46 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  85%|████████▌ | 218/256 [00:34<00:14,  2.59it/s, est. speed input: 2574.14 toks/s, output: 2043.28 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▌ | 220/256 [00:35<00:21,  1.66it/s, est. speed input: 2471.83 toks/s, output: 2012.60 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  86%|████████▋ | 221/256 [00:36<00:21,  1.62it/s, est. speed input: 2436.41 toks/s, output: 2011.79 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 222/256 [00:36<00:16,  2.03it/s, est. speed input: 2441.11 toks/s, output: 2041.00 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  87%|████████▋ | 223/256 [00:36<00:13,  2.43it/s, est. speed input: 2439.93 toks/s, output: 2066.87 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  88%|████████▊ | 225/256 [00:36<00:08,  3.70it/s, est. speed input: 2449.21 toks/s, output: 2129.91 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▊ | 227/256 [00:38<00:11,  2.46it/s, est. speed input: 2389.78 toks/s, output: 2132.78 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▉ | 228/256 [00:38<00:10,  2.67it/s, est. speed input: 2384.78 toks/s, output: 2156.11 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  89%|████████▉ | 229/256 [00:39<00:13,  2.00it/s, est. speed input: 2340.79 toks/s, output: 2144.96 toks/s]
+[36m(LLMRayActor pid=1878117)[0m 
+Processed prompts:  90%|████████▉ | 230/256 [00:39<00:11,  2.28it/s, est. speed input: 2335.36 toks/s, output: 2169.65 toks/s]
