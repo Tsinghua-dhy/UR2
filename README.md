@@ -133,7 +133,7 @@ We support both **Wikipedia abstract corpus** (for open-domain QA) and **Wikiped
 - **Wikipedia Full Corpus** (from KILT):  
   [Download Link](http://dl.fbaipublicfiles.com/KILT/kilt_knowledgesource.json)  
 
-- **BGE-Large-en-V1.5**:
+- **BGE-Large-en-V1.5**:  
   [Download Link](https://huggingface.co/BAAI/bge-large-en-v1.5)
 ### 2. Preprocess Raw Text
 ```bash
