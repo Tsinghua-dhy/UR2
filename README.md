@@ -4,8 +4,8 @@
 <img src="./ur2.png" width="85%">
 </div>
 
-**Paper Link**: [https://arxiv.org/abs/2508.06165]
-
+**Paper Link**: [https://arxiv.org/abs/2508.06165]  
+**Model Link**: [Modelscope UR2 Models](https://www.modelscope.cn/collections/UR2-9471aa070f1a46)
 ---
 
 ## 🔍 Overview
