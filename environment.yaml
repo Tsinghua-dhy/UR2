@@ -80,7 +80,6 @@ dependencies:
       - duckduckgo-search==8.0.1
       - einops==0.8.1
       - email-validator==2.2.0
-      - en-core-web-sm==3.8.0
       - et-xmlfile==2.0.0
       - exceptiongroup==1.2.2
       - faiss-gpu==1.7.2
