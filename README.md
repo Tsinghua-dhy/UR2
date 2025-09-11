@@ -102,6 +102,7 @@ Create a new environment from the provided YAML file:
 ```bash
 conda env create -f environment.yaml
 conda activate ur2
+pip install flash-attn==2.7.4.post1
 ```
 
 ⚠️ Please make sure the following package versions are exactly matched:
