@@ -1,0 +1,1 @@
+python reward_server_qwen_7b_medqa_mmlu.py --data_path "../../train/datasets/train_mmlu_medqa.jsonl" --reward_pretrain /AIRPFS/lwt/model/qwen-2.5-7b-instruct --log_file /AIRPFS/lwt/rewards/sampling.jsonl --port 1278 --host 127.0.0.1

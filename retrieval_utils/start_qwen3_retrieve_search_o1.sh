@@ -1,0 +1,1 @@
+python qwen3_retrieve_search_o1.py 5004 qwen3-32b 3,4,5,6 8192 "weak_format"
