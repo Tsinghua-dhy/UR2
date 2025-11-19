@@ -117,7 +117,7 @@ Install the modified OpenRLHF-RAG module (modified OpenRLHF module) into your lo
 
 ```bash
 cd UR2_RL/OpenRLHF-RAG
-pip install -e .
+pip install --no-deps -e .
 ```
 
 ---
