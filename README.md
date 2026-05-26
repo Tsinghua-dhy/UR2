@@ -7,7 +7,7 @@
 **Paper Link**: [https://arxiv.org/abs/2508.06165]  
 **Model Link**: [Modelscope UR2 Models](https://www.modelscope.cn/collections/UR2-9471aa070f1a46)
 
-🎉 Accepted as ACL 2026 Oral Paper
+🎉 Accepted as ACL 2026 ORAL Paper
 ---
 
 ## 🔍 Overview
